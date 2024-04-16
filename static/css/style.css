@@ -1,0 +1,578 @@
+/*Hola, agrego algunos comentarios a los que ya habían para que sea más facil
+la adaptación de sus páginas. Quiero comentarles que lo pasé por una página, 
+https://www.projectwallace.com/css-code-quality, que analiza la calidad del código CSS
+y te informa de errores de rendimiento, etc. El código pasa, tiene algunas sugerencias
+pero ningun error por el momento.
+Primero, intenté agregar una paleta de colores basándome en el logo. Recuerdo que 
+el profe nos dijo que era un detalle empresarial, si la empresa quiere renovarse y 
+cambiar sus colores directamente viene al :root y modifica los colores sin alterar 
+el estilo. Como les conté, el diseño no es mi fuerte, si consideran que necesita 
+modificarse lo pasan por el grupo.*/
+:root {
+    font-family: 'Roboto', sans-serif;
+    --primary-color: #333333;
+    --secondary-color: #212121;
+    --accent-color: #ddd;
+    --second-accent: #C373D7;
+    --bg-color: #EDF2F4;
+    --dark-color: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 1.5px;
+}
+/*Esto lo agregué porque noté que en cada ul se repetía esto y no es necesario, 
+si se declara a nivel general y no se pisotea en una nueva declaración, va a aplicar
+esta regla*/
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+a:hover {
+    opacity: 0.7; /* Cambia la opacidad al 70% al hacer hover */
+    transition: opacity 0.3s ease; /* Agrega una transición suave */
+}
+
+h4 {
+    font-size: 1.3rem;
+}
+
+/* HEADER */
+
+.descuento {
+    background-color: var(--secondary-color);
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+}
+
+.descuento span {
+    color: rgba(255, 255, 255, 0.938);
+    position: absolute;
+    animation: moverTexto 35s linear infinite;
+    white-space: nowrap;
+}
+
+@keyframes moverTexto {
+    0% {
+        transform: translateX(100%);
+        margin-left: 100%;
+        margin-right: -100%;
+    }
+
+    100% {
+        transform: translateX(-100%);
+        margin-left: -100%;
+        margin-right: 100%;
+    }
+}
+
+.row-header {
+    display: flex;
+    background-color: var(--dark-color);
+}
+
+.col-1 {
+    flex: 1;
+}
+
+.col-1 img#logo_calzados {
+    width: 150px; /* Establece el ancho deseado */
+    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+    margin-left: 2rem;
+}
+.col-1 a:hover img#logo_calzados {
+    opacity: 0.7; /* Cambia la opacidad al 70% al hacer hover */
+    transition: opacity 0.3s ease; /* Agrega una transición suave */
+}
+
+.col-2 {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+    align-items: center; /* Alinea verticalmente los elementos */
+    margin-right: 2rem;
+}
+.col-2 a {
+    margin-right: 20px; /* Añade un margen entre los elementos */
+    font-size: 0.8rem;
+    color: var(--bg-color);
+}
+
+/* HEADER NAV */
+
+.navbar {
+    background-color: var(--accent-color);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-list li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.nav-list li:last-child {
+    margin-right: 0;
+}
+
+.nav-list li a {
+    color: #535353;
+    font-weight: bold;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f3f3f3;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7);
+    z-index: 1;
+    top: 100%; /* Alinea el menú desplegable con la parte inferior del tag "Hombres" */
+    left: 0; /* Alinea el menú desplegable con el borde izquierdo del tag "Hombres" */
+    opacity: 0; /* Inicialmente, el menú desplegable estará oculto */
+    transition: opacity 0.3s ease; /* Transición suave de la opacidad */
+    transform: translateY(-10px); /* Desplazamiento hacia arriba para simular un efecto de aparición */
+}
+
+.dropdown-content a {
+    font-size: 13px;
+    padding: 12px 16px;
+    display: block;
+    border-bottom: 1px solid #ccc; /* Línea separadora entre elementos */
+    transition: background-color 0.3s; /* Agrega una transición suave al cambio de color de fondo */
+}
+
+/*El dropdown original tenia declarado background-color: #ddd; lo que hacía que 
+la sombra sea gricesita. Pensé que estaría bueno agregar pequeños detalles sutilez 
+del violeta del logo y por eso lo modifiqué para que se vea sólo cuando se pasa
+el mouse por arriba*/
+.dropdown-content a:hover {
+    background-color: var(--second-accent);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1; /* Al hacer hover, el menú desplegable se hace visible */
+    transform: translateY(0); /* La transformación vuelve a su posición original */
+}
+
+.search-box {
+    display: flex;
+}
+
+.search-box input[type="text"] {
+    padding: 8px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    border-right: none;
+}
+
+.search-box button {
+    padding: 8px 15px;
+    border: none;
+    background-color: var(--secondary-color);
+    color: var(--bg-color);
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background-color: #555;
+}
+
+/* MAIN */
+/*Acá es donde entra la parte de JS. Si ven el documento HTML, van a encontrar que
+solo hay contenedores en main. Tanto el main de index como el de tab-mujer son
+diferentes por el momento, porque a mi parecer cumplen diferentes propósitos.
+Para mi, index anuncia los productos y te lleva a lo que estas buscando, mientras
+que cada tab tiene información específica. No voy a encontrar zapatos de niños
+en la tab de mujer y etc.
+Por lo tanto, main de index solo tiene un contenedor donde irian las publicidades
+o lo que sea que decidamos agregarle, mientras que el main de tab-mujer tiene
+dos contenedores hijos, uno es donde esta el nombre de la seccion que nos encontramos
+(en mi caso, Mujer) y el otro que tiene dos contenedores mas, uno donde va la 
+funcionalidad de filtrar (notese que lo dejé vació porque tenemos que decidir cómo
+lo hacemos) y el otro donde está display. Para entender qué sucede en display, 
+debemos abrir app.js*/
+
+/*Contenedor que encontramos en todos los html*/
+.main {
+    height: 120vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color);
+}
+
+/*Contenedor de la publicidad que aparece en index.html*/
+.main-ad{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    border: 2px solid var(--second-accent);
+}
+
+/*Contenedor del titulo de la pagina donde nos encontramos, se encuentra en 
+tab-mujer.html*/
+.main-title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 30px;
+    border-bottom: 1px solid var(--accent-color);
+}
+
+/*Contenedor donde vamos a ver los filtros por un lado y los productos por el otro*/
+.main-body{
+    display: flex;
+    height: 90%;
+}
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    padding: 10px;
+    box-shadow: 0 8px 8px 0 rgba(0,0,0,0.3);
+}
+
+/*Este es el contenedor donde apareceran los productos. Decidí darle display:grid
+porque en teoria debería ser más facil alinear los productos entre filas y columnas.
+Me costó un huevo, mucho probar. Si lo pueden mejorar, porfa pasen el código;
+si creen que queda mejor con flex, no me opongo para nada*/
+.display {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+    padding: 30px;
+    overflow-y: scroll;
+}
+
+/*A partir de acá es donde tienen que abrir el app.js. También lo encontrarán 
+comentado. Lo que hice fue guardar en la variable const shoeContainer el acceso
+a la etiqueta HTML div con clase 'display' (es decir, el contenedor que está arriba
+y le asigné un hijo, que tiene como clase 'shoeDiv'. Esto no modifica el HTML
+pero en el DOM se crea algo así:
+      <main class="main">
+        <div class="main-title">
+            <h1 class="inicio">Mujer</h1>
+        </div>
+        <div class="main-body">
+            <div class="filter">Filtrar</div>
+            <div class="display">
+               <div class="shoeDiv">
+               </div>
+            </div>
+        </div>
+    </main>
+
+.shoeDiv es el cuadradito redondeado donde se ven las imágenes del producto, el nombre
+y el precio (al menos por el momento, me gustaría que pueda mostrar los colores
+de cada producto y si estan disponibles o fuera de stock)*/
+.shoeDiv {
+    width: 200px;
+    height: 250px;
+    margin-left: 5%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+}
+
+/*Para renderizar esta información, .shoeDiv tiene a su vez dos hijos, uno es un 
+div con clase 'imageContainer' y el otro un div con clase 'lilDisplay'. Nuevamente,
+no lo verán en el HTML, pero en el DOM sigue una línea así:
+      <main class="main">
+        <div class="main-title">
+            <h1 class="inicio">Mujer</h1>
+        </div>
+        <div class="main-body">
+            <div class="filter">Filtrar</div>
+            <div class="display">
+               <div class="shoeDiv">
+                  <div class='imageContainer'></div>
+                  <div class='lilDisplay'></div>
+               </div>
+            </div>
+        </div>
+    </main>
+ 
+Ninguno de estos contenedores tienen display:flex, pero como heredan del padre .shoeDiv
+sus posiciones pueden ajustarse, por eso flex:1 que le dice al div 'imageContainer'
+que ocupe todo el lugar disponible y no se achique si encojen la página.*/
+.imageContainer{
+    flex: 1;
+    position: relative;
+}
+
+/*'imageContainer' a su vez tiene dos hijos, dos etiquetas img con clase 'sideImage'
+y 'frontImage'. Estas etiquetas recuperan información de las propiedades del objeto
+Product, en particular 'frontImage' recupera lo que esta en Product.frontImage y
+'sideImage' recupera lo que esta en Product.sideImage (técnicamente, lo que estoy
+diciendo esta mal, se los explico mejor en el app.js para no repetir, pero para
+que visualmente se entienda lo que estoy diciendo, preferí escribirlo así.
+En el DOM encontraríamos:
+      <main class="main">
+        <div class="main-title">
+            <h1 class="inicio">Mujer</h1>
+        </div>
+        <div class="main-body">
+            <div class="filter">Filtrar</div>
+            <div class="display">
+               <div class="shoeDiv">
+                  <div class='imageContainer'>
+                     <img class='frontImage' src='(el correspondiente de cada producto)'>
+                     <img class='sideImage' src='(el correspondiente de cada producto)'>
+                    </div>
+                  <div class='lilDisplay'></div>
+               </div>
+            </div>
+        </div>
+    </main>
+
+Esta parte tambien recibe la animación. Si quieren chusmear lo que hace, comenten
+las lineas de abajo hasta lilDisplay. Van a ver que ambas se encuentran visibles, 
+la animación lo que hace es que 'sideImage' sea transparente y cuando pasamos
+el mouse por arriba del contenedor 'shoeDiv', 'sideImage' cambie su opacidad a 1
+mientras que 'frontImage' se vuelva transparente. Tambien le agregué un detalle
+para que cada 'shoeDiv' resalte, se levanta y brilla en color violeta mientras
+el mouse se encuentra arriba del contenedor.*/
+
+.frontImage, .sideImage{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.sideImage{
+    opacity: 0;
+}
+
+.shoeDiv:hover{
+    transform: translateY(-10px);
+    cursor: pointer;
+    border: 2px solid var(--second-accent);
+    box-shadow: 0px 8px 16px 0 rgba(195,115,215,0.3);
+}
+
+.shoeDiv:hover .frontImage{
+    opacity: 0;
+}
+
+.shoeDiv:hover .sideImage{
+    opacity: 1;
+}
+
+/*Por último, lilDisplay también tiene hijos. Como ambos son textos, modifique
+el CSS solo para que se alinee al centro, esto va a cambiar si es que queremos
+mostrar los colores de los productos y el stock disponible. Para terminar de 
+visualizar el DOM, tendríamos
+<main class="main">
+        <div class="main-title">
+            <h1 class="inicio">Mujer</h1>
+        </div>
+        <div class="main-body">
+            <div class="filter">Filtrar</div>
+            <div class="display">
+               <div class="shoeDiv">
+                  <div class='imageContainer'>
+                     <img class='frontImage' src='(el correspondiente de cada producto)'>
+                     <img class='sideImage' src='(el correspondiente de cada producto)'>
+                    </div>
+                  <div class='lilDisplay'>
+                     Name
+                     <br>
+                     Price
+                  </div>
+               </div>
+            </div>
+        </div>
+    </main>
+No crea contenedores ni etiquetas si no texto, texto que lo busca en las propiedades
+del producto del array.
+Esta visualización final que ven lo va a hacer por cada elemento del array myStuff*/
+
+.lilDisplay{
+    text-align: center;
+    padding: 5px;
+} 
+
+
+/* FOOTER */
+
+.row {
+    padding: 2rem;
+    display: flex; /* Esto activa Flexbox para el contenedor */
+    flex-wrap: wrap; /* Permite que los elementos se pasen a la siguiente línea si no hay espacio */
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.footer-content {
+    background-color: var(--dark-color);
+}
+
+.footer-legal {
+    background-color: var(--secondary-color);
+}
+
+.col-redes, .col-navegacion, .col-medios, .col-newsletter {
+    flex: 1; /* Cada columna toma un igual porcentaje del espacio disponible */
+    color: var(--bg-color);
+    margin-right: 20px;
+    max-width: 200px;
+}
+
+/* Estilos para la columna de envíos */
+.col-medios .envios {
+    margin-top: 20px; /* Añade un espacio entre las dos secciones dentro de la columna de medios */
+}
+
+/* Estilos adicionales para mejor visualización */
+.col-redes a, .col-navegacion ul {
+    margin: 10px 0; /* Añade un poco de margen superior e inferior para separar los elementos */
+}
+
+.col-redes h4 {
+    margin-left: 5px;
+}
+
+.col-medios h4, .col-newsletter h4 {
+    margin-bottom: 1.5rem;
+}
+
+.col-redes a {
+    padding-top: 1rem; /* Añade un padding superior de 1rem */
+    margin: 0 5px 0 5px;
+    display: inline-block; /* Esto asegura que el padding se aplique correctamente */
+    color: var(--second-accent);
+}
+
+.navegacion li {
+    padding-top: 1rem;
+}
+
+.navegacion a {
+    color: var(--bg-color);
+}
+
+.copyright, .copyright a {
+    color: var(--accent-color);
+    font-size: 12px;
+}
+
+.copyright a:hover {
+    text-decoration: underline;
+}
+
+.input-field {
+    width: 200px;
+    height: 35px;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, .1);
+    border: none;
+    outline: none;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.submit-button {
+    background-color: var(--dark-color);
+    color: var(--bg-color);
+    font-size: 12px;
+    font-weight: bolder;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer; /* Cambia el cursor al pasar por encima del botón */
+    margin-top: 5px;
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+    transition-delay: 0.1s; /* Retraso de 0.2 segundos */
+}
+
+.submit-button:hover {
+    background-color: #313131; /* Cambia el color de fondo al pasar el cursor por encima */
+}
+
+
+/* BOTON FLOTANTE WHATSAPP */
+
+.whatsapp-button {
+    position: fixed;
+    right: 10px; /* Espacio desde el lado derecho de la pantalla */
+    bottom: 10px; /* Espacio desde la parte inferior de la pantalla */
+    padding: 10px 15px; /* Espacio interno alrededor del icono */
+    font-size: 30px; /* Tamaño del icono */
+    background-color: #4dc247; /* Color de fondo de WhatsApp */
+    color: white; /* Color del icono */
+    border-radius: 50%; /* Redondear las esquinas */
+    border: 1px solid #0000008a; /* Agrega un borde de 2px sólido de color negro */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.84); /* Sombra ligera para destacar el botón */
+    text-decoration: none; /* Eliminar el subrayado del enlace */
+    z-index: 1000; /* Asegura que el botón no sea cubierto por otros elementos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* Efecto al pasar el mouse por encima */
+.whatsapp-button:hover {
+    background-color: #489744; /* Un tono más oscuro para el hover */
+    animation: pulse 1s ease infinite; 
+}
+
+/* Estilos para el contenedor de las imágenes */
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(32px, 1fr)); /* Columnas dinámicas */
+    max-width: 200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor en la página */
+    gap: 2px;
+}
+
+/* Estilos para las imágenes */
+.image-container img {
+    width: auto; /* Ancho automático */
+    max-height: 20px; /* Altura máxima de 32px */
+    margin: 2px; /* Margen de 2px alrededor de cada imagen */
+}

@@ -1,13 +1,4 @@
-/*Hola, agrego algunos comentarios a los que ya habían para que sea más facil
-la adaptación de sus páginas. Quiero comentarles que lo pasé por una página, 
-https://www.projectwallace.com/css-code-quality, que analiza la calidad del código CSS
-y te informa de errores de rendimiento, etc. El código pasa, tiene algunas sugerencias
-pero ningun error por el momento.
-Primero, intenté agregar una paleta de colores basándome en el logo. Recuerdo que 
-el profe nos dijo que era un detalle empresarial, si la empresa quiere renovarse y 
-cambiar sus colores directamente viene al :root y modifica los colores sin alterar 
-el estilo. Como les conté, el diseño no es mi fuerte, si consideran que necesita 
-modificarse lo pasan por el grupo.*/
+/*Hola, la única modificacion que agregué aca fue en los div donde se van a cargar los productos. Solo cambie nombres*/
 :root {
     font-family: 'Roboto', sans-serif;
     --primary-color: #333333;
@@ -24,9 +15,7 @@ modificarse lo pasan por el grupo.*/
     box-sizing: border-box;
     letter-spacing: 1.5px;
 }
-/*Esto lo agregué porque noté que en cada ul se repetía esto y no es necesario, 
-si se declara a nivel general y no se pisotea en una nueva declaración, va a aplicar
-esta regla*/
+
 ul{
     list-style-type: none;
 }
@@ -199,19 +188,6 @@ el mouse por arriba*/
 }
 
 /* MAIN */
-/*Acá es donde entra la parte de JS. Si ven el documento HTML, van a encontrar que
-solo hay contenedores en main. Tanto el main de index como el de tab-mujer son
-diferentes por el momento, porque a mi parecer cumplen diferentes propósitos.
-Para mi, index anuncia los productos y te lleva a lo que estas buscando, mientras
-que cada tab tiene información específica. No voy a encontrar zapatos de niños
-en la tab de mujer y etc.
-Por lo tanto, main de index solo tiene un contenedor donde irian las publicidades
-o lo que sea que decidamos agregarle, mientras que el main de tab-mujer tiene
-dos contenedores hijos, uno es donde esta el nombre de la seccion que nos encontramos
-(en mi caso, Mujer) y el otro que tiene dos contenedores mas, uno donde va la 
-funcionalidad de filtrar (notese que lo dejé vació porque tenemos que decidir cómo
-lo hacemos) y el otro donde está display. Para entender qué sucede en display, 
-debemos abrir app.js*/
 
 /*Contenedor que encontramos en todos los html*/
 .main {
@@ -227,11 +203,11 @@ debemos abrir app.js*/
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 80%;
+    height: 30vh;
     border: 2px solid var(--second-accent);
 }
 
-/*Contenedor del titulo de la pagina donde nos encontramos, se encuentra en 
+/*Contenedor del titulo de la pagina donde nos encontramos, se encuentra, por el momento, en 
 tab-mujer.html*/
 .main-title{
     display: flex;
@@ -258,8 +234,10 @@ tab-mujer.html*/
 /*Este es el contenedor donde apareceran los productos. Decidí darle display:grid
 porque en teoria debería ser más facil alinear los productos entre filas y columnas.
 Me costó un huevo, mucho probar. Si lo pueden mejorar, porfa pasen el código;
-si creen que queda mejor con flex, no me opongo para nada*/
-.display {
+si creen que queda mejor con flex, no me opongo para nada.
+Acá agregué los diferentes contenedores, tienen el mismo estilo pero si se fijan, 
+todos se ven iguales. Acá iria el del html hombre y el de niño*/
+.displayMujer, .displayAd {
     flex: 1;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -269,25 +247,7 @@ si creen que queda mejor con flex, no me opongo para nada*/
     overflow-y: scroll;
 }
 
-/*A partir de acá es donde tienen que abrir el app.js. También lo encontrarán 
-comentado. Lo que hice fue guardar en la variable const shoeContainer el acceso
-a la etiqueta HTML div con clase 'display' (es decir, el contenedor que está arriba
-y le asigné un hijo, que tiene como clase 'shoeDiv'. Esto no modifica el HTML
-pero en el DOM se crea algo así:
-      <main class="main">
-        <div class="main-title">
-            <h1 class="inicio">Mujer</h1>
-        </div>
-        <div class="main-body">
-            <div class="filter">Filtrar</div>
-            <div class="display">
-               <div class="shoeDiv">
-               </div>
-            </div>
-        </div>
-    </main>
-
-.shoeDiv es el cuadradito redondeado donde se ven las imágenes del producto, el nombre
+/*.shoeDiv es el cuadradito redondeado donde se ven las imágenes del producto, el nombre
 y el precio (al menos por el momento, me gustaría que pueda mostrar los colores
 de cada producto y si estan disponibles o fuera de stock)*/
 .shoeDiv {
@@ -302,25 +262,7 @@ de cada producto y si estan disponibles o fuera de stock)*/
     border-radius: 15px;
 }
 
-/*Para renderizar esta información, .shoeDiv tiene a su vez dos hijos, uno es un 
-div con clase 'imageContainer' y el otro un div con clase 'lilDisplay'. Nuevamente,
-no lo verán en el HTML, pero en el DOM sigue una línea así:
-      <main class="main">
-        <div class="main-title">
-            <h1 class="inicio">Mujer</h1>
-        </div>
-        <div class="main-body">
-            <div class="filter">Filtrar</div>
-            <div class="display">
-               <div class="shoeDiv">
-                  <div class='imageContainer'></div>
-                  <div class='lilDisplay'></div>
-               </div>
-            </div>
-        </div>
-    </main>
- 
-Ninguno de estos contenedores tienen display:flex, pero como heredan del padre .shoeDiv
+/*Ninguno de estos contenedores tienen display:flex, pero como heredan del padre .shoeDiv
 sus posiciones pueden ajustarse, por eso flex:1 que le dice al div 'imageContainer'
 que ocupe todo el lugar disponible y no se achique si encojen la página.*/
 .imageContainer{
@@ -328,32 +270,7 @@ que ocupe todo el lugar disponible y no se achique si encojen la página.*/
     position: relative;
 }
 
-/*'imageContainer' a su vez tiene dos hijos, dos etiquetas img con clase 'sideImage'
-y 'frontImage'. Estas etiquetas recuperan información de las propiedades del objeto
-Product, en particular 'frontImage' recupera lo que esta en Product.frontImage y
-'sideImage' recupera lo que esta en Product.sideImage (técnicamente, lo que estoy
-diciendo esta mal, se los explico mejor en el app.js para no repetir, pero para
-que visualmente se entienda lo que estoy diciendo, preferí escribirlo así.
-En el DOM encontraríamos:
-      <main class="main">
-        <div class="main-title">
-            <h1 class="inicio">Mujer</h1>
-        </div>
-        <div class="main-body">
-            <div class="filter">Filtrar</div>
-            <div class="display">
-               <div class="shoeDiv">
-                  <div class='imageContainer'>
-                     <img class='frontImage' src='(el correspondiente de cada producto)'>
-                     <img class='sideImage' src='(el correspondiente de cada producto)'>
-                    </div>
-                  <div class='lilDisplay'></div>
-               </div>
-            </div>
-        </div>
-    </main>
-
-Esta parte tambien recibe la animación. Si quieren chusmear lo que hace, comenten
+/*Esta parte recibe la animación. Si quieren chusmear lo que hace, comenten
 las lineas de abajo hasta lilDisplay. Van a ver que ambas se encuentran visibles, 
 la animación lo que hace es que 'sideImage' sea transparente y cuando pasamos
 el mouse por arriba del contenedor 'shoeDiv', 'sideImage' cambie su opacidad a 1
@@ -392,32 +309,7 @@ el mouse se encuentra arriba del contenedor.*/
 
 /*Por último, lilDisplay también tiene hijos. Como ambos son textos, modifique
 el CSS solo para que se alinee al centro, esto va a cambiar si es que queremos
-mostrar los colores de los productos y el stock disponible. Para terminar de 
-visualizar el DOM, tendríamos
-<main class="main">
-        <div class="main-title">
-            <h1 class="inicio">Mujer</h1>
-        </div>
-        <div class="main-body">
-            <div class="filter">Filtrar</div>
-            <div class="display">
-               <div class="shoeDiv">
-                  <div class='imageContainer'>
-                     <img class='frontImage' src='(el correspondiente de cada producto)'>
-                     <img class='sideImage' src='(el correspondiente de cada producto)'>
-                    </div>
-                  <div class='lilDisplay'>
-                     Name
-                     <br>
-                     Price
-                  </div>
-               </div>
-            </div>
-        </div>
-    </main>
-No crea contenedores ni etiquetas si no texto, texto que lo busca en las propiedades
-del producto del array.
-Esta visualización final que ven lo va a hacer por cada elemento del array myStuff*/
+mostrar los colores de los productos y el stock disponible. */
 
 .lilDisplay{
     text-align: center;

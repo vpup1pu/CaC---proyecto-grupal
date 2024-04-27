@@ -1,9 +1,14 @@
 const path = require('path');
 
 module.exports = {
-  entry: './scripts/app.js', // Entry point of your application
+  entry: {
+    mujer: './scripts/mujer.js',
+    hombre: './scripts/hombre.js',
+    niño: './scripts/niño.js',
+    app: './scripts/app.js'
+  }, // Este archivo tambíen sufrió una modificación, necesito que cree 4 bundles diferentes
   output: {
-    filename: 'bundle.js', // Output file name
+    filename: '[name].bundle.js', // ese [name] lo reemplaza con el nombre de entrada. por ej en el primero queda mujer.bundle.js
     path: path.resolve(__dirname, 'dist'), // Output directory
   },
   module: {

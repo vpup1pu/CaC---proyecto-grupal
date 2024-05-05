@@ -508,3 +508,112 @@ mostrar los colores de los productos y el stock disponible. */
     max-height: 20px; /* Altura máxima de 32px */
     margin: 2px; /* Margen de 2px alrededor de cada imagen */
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container-form {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.container-form h2 {
+    margin-bottom: 15px;
+    font-size: 28px;
+    text-align: center;
+}
+
+.container-form p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+}
+ 
+
+.container-form form .campo,
+.container-form form textarea {
+    width: 100%;
+    padding: 15px 10px;
+    font-size: 16px;
+    border: 1px solid #dbdbdb;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    outline: 0px;
+}
+
+.container-form form textarea {
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 140px;
+    max-height: 150px;
+}
+
+.container-form .btn-enviar {
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    outline: 0px;
+    background: rgba(234, 224, 224, 0.5);
+    color: rgb(152, 94, 94);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.container-form .btn-enviar:hover {
+    background: rgba(186, 173, 173, 0.3);
+}
+
+.info-form a {
+    font-size: 16x;
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+    display: inline-block; /* Cambia a inline-block para que los enlaces estén en la misma línea */
+    margin-right: 500px; /* Agrega un espacio a la derecha del primer enlace */
+}
+
+.info-form a:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último enlace para evitar espacio adicional */
+}
+
+.btn-wsp{
+    position:fixed;
+    width:60px;
+    height:60px;
+    line-height: 60px;
+    bottom:25px;
+    right:25px;
+    background:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:35px;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.3);
+    z-index:100;
+    transition: all 300ms ease;
+}
+.btn-wsp:hover{
+    text-decoration: none;
+    color: #0df053;
+    background: #fff;
+}
+@media only screen and (min-width:320px) and (max-width:768px){
+    .btn-wsp{
+        width:63px;
+        height:63px;
+        line-height: 66px;
+	}
+}

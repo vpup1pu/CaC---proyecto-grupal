@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de contacto</title>
+    <title>Contacto</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Boton Flotante - WhatsApp</title>
+    <link rel="stylesheet" href="estilos.css">
+    <!--Icon-Font-->
+    <link rel="icon" href="./favicon1.png" type="favicon.png">
+</head>
+<body>
+    <div class="container-form">
+        <div>
+            <h2>Contactanos</h2>
+            <p>¡Nos encantaría escucharte! Completa el formulario y nos pondremos en contacto contigo lo antes posible.</p>
+        </div>
+        <br>
+        <div class="info-form">
+                <a href="#" style="text-align: center;"><i class="fa fa-phone"></i><br>Telefono<br><span style="font-weight: normal;">541163673682</span></a>
+                <a href="#" style="text-align: center;"><i class="fa fa-map-marked"></i><br>Direccion<br><span style="font-weight: normal;">Avenida Juan Carlos 421 | Buenos Aires</a>
+        </div>
+        <br>
+        <br>
+        <br>
+        <form action="#" autocomplete="off">
+            <div class="form-control">
+                <label for="name">Nombre</label>
+                <input type="text" name="nombre" class="campo">
+            </div>
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input type="email" name="email" class="campo">
+            </div>
+            <div class="form-control">
+                <label for="cell-phone">Telefono</label>
+                <input type="cell-phone" name="cell-phone" class="campo">
+            <div class="form-control">
+                <label for="mensaje">Mensaje</label>
+                <textarea name="mensaje"></textarea>
+            </div>
+            <div class="form-control">
+                <input type="submit" name="enviar"value="enviar mensaje" class="btn-enviar">
+            </div>
+        </form>
+    </div>
+      <a href="https://api.whatsapp.com/send?phone=+51987654321" class="btn-wsp" target="_blank">
+          <i class="fa fa-whatsapp icono"></i>
+      </a>
+</body>
+</html>

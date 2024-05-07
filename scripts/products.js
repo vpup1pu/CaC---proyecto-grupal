@@ -8,7 +8,7 @@ export function Product(frontImage, sideImage, name, type, price, variations) {
 };
 
 export const stuffMujer = [
-    new Product(`../static/img/01front.avif`, `../static/img/01side.avif`, 'Zapatillas Gazelle', 'Urbanos', '$183.999', [
+    new Product(`./static/img/01front.avif`, `./static/img/01side.avif`, 'Zapatillas Gazelle', 'Urbanos', '$183.999', [
         { size: 37, color: 'gray', availability: 'disponible'},
         { size: 37, color: 'green', availability: 'fuera de stock'},
         { size: 37, color: 'white', availability: 'disponible'},
@@ -22,13 +22,13 @@ export const stuffMujer = [
         { size: 40, color: 'green', availability: 'fuera de stock'},
         { size: 40, color: 'white', availability: 'fuera de stock'}
     ]),
-    new Product(`../static/img/02front.webp`, `../static/img/02side.webp`, 'Sandalias Modare', 'Zapatos', '$12.000', [
+    new Product(`./static/img/02front.webp`, `./static/img/02side.webp`, 'Sandalias Modare', 'Zapatos', '$12.000', [
         {size: 37, color: 'brown', availability: 'disponible'},
         {size: 38, color: 'brown', availability: 'fuera de stock'},
         {size: 39, color: 'brown', availability: 'disponible'},
         {size: 40, color: 'brown', availability: 'disponible'}
     ]),
-    new Product(`../static/img/03front.avif`, `../static/img/03side.avif`, 'Zapatillas Rapidmove ADV', 'Deportivos', '$154.999', [
+    new Product(`./static/img/03front.avif`, `./static/img/03side.avif`, 'Zapatillas Rapidmove ADV', 'Deportivos', '$154.999', [
         {size: 37, color: 'lime', availability: 'disponible'},
         {size: 37, color: 'red', availability: 'disponible'},
         {size: 38, color: 'lime', availability: 'fuera de stock'},
@@ -38,7 +38,7 @@ export const stuffMujer = [
         {size: 40, color: 'lime', availability: 'disponible'},
         {size: 40, color: 'red', availability: 'fuera de stock'}
     ]),
-    new Product(`../static/img/04front.webp`, `../static/img/04side.webp`, 'Remerón Tropical', 'Indumentaria', '$7.299,00', [
+    new Product(`./static/img/04front.webp`, `./static/img/04side.webp`, 'Remerón Tropical', 'Indumentaria', '$7.299,00', [
         {size: 'S', color: 'white', availability: 'disponible'},
         {size: 'S', color: 'black', availability: 'disponible'},
         {size: 'M', color: 'white', availability: 'fuera de stock'},
@@ -46,7 +46,7 @@ export const stuffMujer = [
         {size: 'L', color: 'white', availability: 'disponible'},
         {size: 'L', color: 'black', availability: 'fuera de stock'},
     ]),
-    new Product(`../static/img/05front.webp`, `../static/img/05side.webp`, 'Botitas Jaguar', 'Descuentos', '$9.899', [
+    new Product(`./static/img/05front.webp`, `./static/img/05side.webp`, 'Botitas Jaguar', 'Descuentos', '$9.899', [
         {size: 37, color: 'black', availability: 'disponible'}
     ])
 ];

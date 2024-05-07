@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elegance Edg</title>
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Mujer: Calzado Hasta 3 cuotas sin interés - Elegance Edg</title>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./static/css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-...." crossorigin="anonymous" />
@@ -20,7 +20,7 @@
             </div>
             <div class="row-header">
                 <div class="col-1">
-                    <a href="#"><img src="../static/img/logo.jpeg" id="logo_calzados" alt="logo_calzados"></a>
+                    <a href="./index.html"><img src="./static/img/logo.jpeg" id="logo_calzados" alt="logo_calzados"></a>
                 </div>
                 <div class="col-2">
                     <a href="#"><i class="fas fa-plus-circle"></i> CREAR CUENTA</a>
@@ -41,7 +41,7 @@
                         </div>
                     </li>
                     <li class="dropdown">
-                        <a href="./tab-mujer.html">MUJERES</a>
+                        <a href="#">MUJERES</a>
                         <div class="dropdown-content">
                             <a href="#">URBANOS</a>
                             <a href="#">ZAPATOS</a>
@@ -70,10 +70,25 @@
         </div>
     </header>
     <main class="main">
-        <div class="main-ad">
-            <h1>Inserte su Publicidad Aquí</h1>
+        <div class="main-title">
+            <h1 class="inicio">Mujer</h1>
         </div>
-        <div class="displayAd"></div>
+        <div class="main-body">
+            <div class="filter">
+                <aside class="categories">
+                    <h3>CATEGORÍAS</h3>
+                    <hr>
+                    <ul>
+                        <li><a href="#">URBANOS</a></li>
+                        <li><a href="#">ZAPATOS</a></li>
+                        <li><a href="#">DEPORTIVOS</a></li>
+                        <li><a href="#">INDUMENTARIA</a></li>
+                        <li><a href="#">DESCUENTOS</a></li>
+                    </ul>
+                </aside>
+            </div>
+            <div class="displayMujer"></div>
+        </div>
     </main>
     <footer>
         <div class="container">
@@ -92,7 +107,7 @@
                         <h4>Navegación</h4>
                         <ul class="navegacion">
                             <li><a href="">NIÑOS</a></li>
-                            <li><a href="./tab-mujer.html">MUJERES</a></li>
+                            <li><a href="#">MUJERES</a></li>
                             <li><a href="">HOMBRES</a></li>
                             <li><a href="./tab-contacto.html">CONTACTO</a></li>
                         </ul>
@@ -147,7 +162,7 @@
                     </div>
                     <div class="col-newsletter">
                         <h4>Newsletter</h4>
-                        <form>
+                        <form action="#" method="post">
                             <input type="text" name="newsletterName" placeholder="Nombre" class="input-field"><br>
                             <input type="email" name="newsletterEmail" placeholder="Email" class="input-field"><br>
                             <button type="submit" class="submit-button">ENVIAR</button>
@@ -156,7 +171,7 @@
                 </div>
                 <div class="footer-legal">
                     <div class="row">
-                        <p class="copyright">Copyright <a href="./creadores.html">Elegance Edg</a> <br>
+                        <p class="copyright">Copyright <a href="./tab-creadores.html">Elegance Edg</a> <br>
                             <span class="derechos">Todos los derechos reservados. Defensa de las y los consumidores.
                                 Para reclamos <a href="#">ingresá acá</a>. / <a href="#">Botón de
                                     arrepentimiento</a></span>
@@ -164,14 +179,14 @@
                     </div>
                 </div>
             </div>
-            <!-- BOTON DE WHATSAPP-->
+            <!-- BOTON DE WHATSAPP -->
             <a href="https://api.whatsapp.com/send?phone=+51987654321" class="btn-wsp" target="_blank">
                 <i class="fab fa-whatsapp"></i>
             </a>
         </div>
     </footer>
     <!-- Aca es donde cada script pensado para cada página va a variar. -->
-    <script src="../dist/app.bundle.js"></script>
+    <script src="./dist/mujer.bundle.js"></script>
 </body>
 
 </html>

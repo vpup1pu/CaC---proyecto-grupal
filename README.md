@@ -47,3 +47,33 @@ También necesitamos un favicon. Pensar cómo vamos a hacer los filtros. El form
 >>Hay de todo para hacer, si terminaron con su parte, subanla al github, elijan algo de esto o algo que creen que falta y trabajenlo.
 
 Por mi parte, ahora que logré renderizar cada producto en su correspondiente lugar, voy a trabajar en la funcionalidad de **tab-template.html**. La idea es que cada vez que clickeamos un producto, se guarde su valor y en esta tab-template renderice las fotos, nombre del producto, talle, precio, disponibilidad. Incluso agregar botones para agregar al carrito. Pero primero tengo que lograr esto, que por cada producto cree página template.
+
+##
+
+## 06/05/24
+
+<br>
+<p align="center">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR56evHDkDIknHLaVItNK2DdMqHbWUktQyaL0sxustqkMMFIE4-ZU411MCs7Wde8qHHSHU&usqp=CAU" width="250px">
+</p>
+<br>
+
+Siguiendo el consejo de Fernando, abandoné la función Redirect(), ya que desde el Front se puede hacer poco en relación a la idea de esa función. Por este motivo, eliminé el archivo tab-template.html que se encontraba en la carpeta tab, ya que no va a tener ningún uso.
+Todavía me quedan hacer cosas, pero sólo va a afectar esta carpeta, la de scripts. También puede ser que modifique el style.css, pero solo para los estilos que se apliquen a esta parte.
+
+>>Por lo tanto, toda mi modificación se encuentra en los **scripts** y obviamente en sus **bundles**. Cuando descarguen esta versión, recuerden actualizar el bundle con el comando *npm run build*.
+<br>
+
+También cree un html que se llama creadores.html. Este lo vamos a referenciar en el footer, donde dice:
+
+>     <p class="copyright">Copyright <a href="./tab/creadores.html">Elegance Edg</a> <br>
+
+ahí es donde iría referenciado el html creadores que donde irían nuestros nombres con links a donde queramos, si queremos github, linkedin, lo que quieran. Yo la dejé para que ocupe el lugar pero Matías dijo que la iba a hacer él.
+
+Por otro lado, fusioné lo que teníamos con lo que subió Matías al github. Unifiqué los estilos, modifiqué un poco la tab de contacto para que tenga el mismo header y footer, y no mucho más.
+
+>>En cada html, cambie las referencias de los links (el atributo href=""), por lo que, con lo que esta cargado hasta este momento, es funcional todo.
+
+
+
+Por último, Matías agregó el favicon. Me mostraba que cuando lo quería renderizar, no aparecía en el navegador. Yo le consulté en su momento al profe porque había tenido el mismo problema, me dijo que es un bug conocido de LiveServer, la extensión que usamos para que nuestro proyecto se habra en el navegador. Agregandole un 1 al nombre del favicon, por alguna razón soluciona el problema. Me aconsejó igual que a la hora de entregar el proyecto, dejemos el nombre sin ninguna modificación, es decir *favicon.ico* porque el navegador siempre va a estar buscando ese nombre.

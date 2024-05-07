@@ -1,4 +1,4 @@
-import { stuffNiño, Redirect } from "./products";
+import { stuffNiño } from "./products";
 //La deje armada para probar que funcionaba, tanto esta como hombre.js van a funcionar en sus respectivas tab,
 //cuando cada integrante suba su pestaña correspondiente. Seguramente se deban modificar algunos nombres, como los
 //div pero es algo que no altera la funcionalidad.
@@ -38,8 +38,4 @@ stuffNiño.forEach(shoe => {
     //La única diferencia en cada archivo js es a donde lo apendea. Es decir, en qué contenedor padre le crea
     //el hijo shoeDiv.
     containerNiño.appendChild(shoeDiv);
-
-    shoeDiv.addEventListener("click", () => {
-        Redirect();
-    })
 });

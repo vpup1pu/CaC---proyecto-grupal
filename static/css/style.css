@@ -5,7 +5,7 @@
     --secondary-color: #212121;
     --accent-color: #ddd;
     --second-accent: #C373D7;
-    --bg-color: #EDF2F4;
+    --bg-color: #f9f9f9;
     --dark-color: #000;
 }
 
@@ -191,7 +191,7 @@ el mouse por arriba*/
 
 /*Contenedor que encontramos en todos los html*/
 .main {
-    height: 120vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     background-color: var(--bg-color);
@@ -308,6 +308,7 @@ que ocupe todo el lugar disponible y no se achique si encojen la página.*/
 .imageContainer{
     flex: 1;
     position: relative;
+    min-height: 0;
 }
 
 /*Esta parte recibe la animación. Si quieren chusmear lo que hace, comenten
@@ -339,11 +340,11 @@ el mouse se encuentra arriba del contenedor.*/
     box-shadow: 0px 8px 16px 0 rgba(195,115,215,0.3);
 }
 
-.shoeDiv:hover .frontImage{
+.shoeDiv:hover .frontImage, .imageContainer:hover .frontImage{
     opacity: 0;
 }
 
-.shoeDiv:hover .sideImage{
+.shoeDiv:hover .sideImage, .imageContainer:hover .sideImage{
     opacity: 1;
 }
 
@@ -356,6 +357,46 @@ mostrar los colores de los productos y el stock disponible. */
     padding: 5px;
 } 
 
+/* Dialog */
+.dialog::backdrop {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.dialog {
+    top: 10%;
+    left: 15%;
+    position: absolute;
+    width: 70vw;
+    height: 90vh;
+    background-color: var(--bg-color);
+    box-shadow: 5px 10px var(--primary-color);
+    border-radius: 8px;
+    border: none;
+}
+
+.closeContainer{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+}
+
+.displayContainer{
+    display: flex;
+    width: 100%;
+    height: 95%;
+    padding: 15px 30px;
+}
+
+.rightContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
 
 /* FOOTER */
 
@@ -453,46 +494,6 @@ mostrar los colores de los productos y el stock disponible. */
     background-color: #313131; /* Cambia el color de fondo al pasar el cursor por encima */
 }
 
-
-/* BOTON FLOTANTE WHATSAPP */
-
-.whatsapp-button {
-    position: fixed;
-    right: 10px; /* Espacio desde el lado derecho de la pantalla */
-    bottom: 10px; /* Espacio desde la parte inferior de la pantalla */
-    padding: 10px 15px; /* Espacio interno alrededor del icono */
-    font-size: 30px; /* Tamaño del icono */
-    background-color: #4dc247; /* Color de fondo de WhatsApp */
-    color: white; /* Color del icono */
-    border-radius: 50%; /* Redondear las esquinas */
-    border: 1px solid #0000008a; /* Agrega un borde de 2px sólido de color negro */
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.84); /* Sombra ligera para destacar el botón */
-    text-decoration: none; /* Eliminar el subrayado del enlace */
-    z-index: 1000; /* Asegura que el botón no sea cubierto por otros elementos */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-
-/* Efecto al pasar el mouse por encima */
-.whatsapp-button:hover {
-    background-color: #489744; /* Un tono más oscuro para el hover */
-    animation: pulse 1s ease infinite; 
-}
-
 /* Estilos para el contenedor de las imágenes */
 .image-container {
     display: grid;
@@ -507,4 +508,109 @@ mostrar los colores de los productos y el stock disponible. */
     width: auto; /* Ancho automático */
     max-height: 20px; /* Altura máxima de 32px */
     margin: 2px; /* Margen de 2px alrededor de cada imagen */
+}
+
+/* Contacto */
+
+.container-form {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px; /*Le agregué un margen por debajo para que no quede pegado el botón al footer*/
+}
+
+.container-form h2 {
+    margin-bottom: 15px;
+    font-size: 28px;
+    text-align: center;
+}
+
+.container-form p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+}
+ 
+
+.container-form form .campo,
+.container-form form textarea {
+    width: 100%;
+    padding: 15px 10px;
+    font-size: 16px;
+    border: 1px solid #dbdbdb;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    outline: 0px;
+}
+
+.container-form form textarea {
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 140px;
+    max-height: 150px;
+}
+
+.container-form .btn-enviar {
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    outline: 0px;
+    background: rgba(234, 224, 224, 0.5);
+    color: rgb(152, 94, 94);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.container-form .btn-enviar:hover {
+    background: rgba(186, 173, 173, 0.3);
+}
+
+.info-form a {
+    font-size: 16x;
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 900;
+    display: inline-block; /* Cambia a inline-block para que los enlaces estén en la misma línea */
+    margin-right: 500px; /* Agrega un espacio a la derecha del primer enlace */
+}
+
+.info-form a:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último enlace para evitar espacio adicional */
+}
+
+/* BOTÓN WHATSAPP */
+
+.btn-wsp{
+    position:fixed;
+    width:60px;
+    height:60px;
+    line-height: 60px;
+    bottom:25px;
+    right:25px;
+    background:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:35px;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.3);
+    z-index:100;
+    transition: all 300ms ease;
+}
+.btn-wsp:hover{
+    text-decoration: none;
+    color: #0df053;
+    background: #fff;
+}
+@media only screen and (min-width:320px) and (max-width:768px){
+    .btn-wsp{
+        width:63px;
+        height:63px;
+        line-height: 66px;
+	}
 }

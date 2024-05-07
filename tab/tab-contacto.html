@@ -62,7 +62,7 @@
                     <li><a href="#">CONTACTO</a></li>
                 </ul>
                 <div class="search-box">
-                    <input type="text" placeholder="Buscar...">
+                    <input type="text" name="buscador" placeholder="Buscar...">
                     <button type="submit">Buscar</button>
                 </div>
             </nav>
@@ -88,18 +88,18 @@
             <form action="#" autocomplete="off">
                 <div class="form-control">
                     <label for="name">Nombre</label>
-                    <input type="text" name="nombre" class="campo">
+                    <input type="text" id="name" name="nombre" class="campo">
                 </div>
                 <div class="form-control">
                     <label for="email">Email</label>
-                    <input type="email" name="email" class="campo">
+                    <input type="email" id="email" name="email" class="campo">
                 </div>
                 <div class="form-control">
                     <label for="cell-phone">Telefono</label>
-                    <input type="cell-phone" name="cell-phone" class="campo">
+                    <input type="cell-phone" id="cell-phone" name="cell-phone" class="campo">
                     <div class="form-control">
                         <label for="mensaje">Mensaje</label>
-                        <textarea name="mensaje"></textarea>
+                        <textarea id="mensaje" name="mensaje"></textarea>
                     </div>
                     <div class="form-control">
                         <input type="submit" name="enviar" value="enviar mensaje" class="btn-enviar">
@@ -184,8 +184,8 @@
                     <div class="col-newsletter">
                         <h4>Newsletter</h4>
                         <form>
-                            <input type="text" placeholder="Nombre" class="input-field"><br>
-                            <input type="email" placeholder="Email" class="input-field"><br>
+                            <input type="text" name="newsletterName" placeholder="Nombre" class="input-field"><br>
+                            <input type="email" name="newsletterEmail"  placeholder="Email" class="input-field"><br>
                             <button type="submit" class="submit-button">ENVIAR</button>
                         </form>
                     </div>

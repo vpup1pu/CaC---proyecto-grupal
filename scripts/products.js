@@ -8,7 +8,7 @@ export function Product(frontImage, sideImage, name, type, price, variations) {
 };
 
 export const stuffMujer = [
-    new Product('../static/img/01 front.avif', '../static/img/01 side.avif', 'Zapatillas Gazelle', 'Urbanos', '$183.999', [
+    new Product(`/static/img/01 front.avif`, `/static/img/01 side.avif`, 'Zapatillas Gazelle', 'Urbanos', '$183.999', [
         { size: 37, color: 'gray', availability: 'disponible'},
         { size: 37, color: 'green', availability: 'fuera de stock'},
         { size: 37, color: 'white', availability: 'disponible'},
@@ -22,13 +22,13 @@ export const stuffMujer = [
         { size: 40, color: 'green', availability: 'fuera de stock'},
         { size: 40, color: 'white', availability: 'fuera de stock'}
     ]),
-    new Product('../static/img/02 front.webp', '../static/img/02 side.webp', 'Sandalias Modare', 'Zapatos', '$12.000', [
+    new Product(`/static/img/02 front.webp`, `/static/img/02 side.webp`, 'Sandalias Modare', 'Zapatos', '$12.000', [
         {size: 37, color: 'brown', availability: 'disponible'},
         {size: 38, color: 'brown', availability: 'fuera de stock'},
         {size: 39, color: 'brown', availability: 'disponible'},
         {size: 40, color: 'brown', availability: 'disponible'}
     ]),
-    new Product('../static/img/03 front.avif', '../static/img/03 side.avif', 'Zapatillas Rapidmove ADV', 'Deportivos', '$154.999', [
+    new Product(`/static/img/03 front.avif`, `/static/img/03 side.avif`, 'Zapatillas Rapidmove ADV', 'Deportivos', '$154.999', [
         {size: 37, color: 'lime', availability: 'disponible'},
         {size: 37, color: 'red', availability: 'disponible'},
         {size: 38, color: 'lime', availability: 'fuera de stock'},
@@ -38,7 +38,7 @@ export const stuffMujer = [
         {size: 40, color: 'lime', availability: 'disponible'},
         {size: 40, color: 'red', availability: 'fuera de stock'}
     ]),
-    new Product('../static/img/04 front.webp', '../static/img/04 side.webp', 'Remerón Tropical', 'Indumentaria', '$7.299,00', [
+    new Product(`/static/img/04 front.webp`, `/static/img/04 side.webp`, 'Remerón Tropical', 'Indumentaria', '$7.299,00', [
         {size: 'S', color: 'white', availability: 'disponible'},
         {size: 'S', color: 'black', availability: 'disponible'},
         {size: 'M', color: 'white', availability: 'fuera de stock'},
@@ -46,7 +46,7 @@ export const stuffMujer = [
         {size: 'L', color: 'white', availability: 'disponible'},
         {size: 'L', color: 'black', availability: 'fuera de stock'},
     ]),
-    new Product('../static/img/05 front.webp', '../static/img/05 side.webp', 'Botitas Jaguar', 'Descuentos', '$9.899', [
+    new Product(`/static/img/05 front.webp`, `/static/img/05 side.webp`, 'Botitas Jaguar', 'Descuentos', '$9.899', [
         {size: 37, color: 'black', availability: 'disponible'}
     ])
 ];
@@ -106,7 +106,7 @@ export function Display(imageContainer, name, price, currentContainer) {
     plusFA.classList.add('fas', 'fa-plus'); //para agregarle el estilo desde fontawesome
     const counter = document.createElement('input'); //donde se va a contar cuantos productos se agregan/quitan
     counter.classList.add('counter');
-    counter.type = "text";
+    counter.type = "number";
     counter.name = "name";
     counter.value = "0";
     const minusBtn = document.createElement('button');//boton para quitar productos
@@ -118,6 +118,18 @@ export function Display(imageContainer, name, price, currentContainer) {
     const cartFA = document.createElement('i');//para agregarle el estilo desde fontawesome
     cartFA.classList.add('fas', 'fa-shopping-cart');//para agregarle el estilo desde fontawesome
     cartBtn.innerHTML = ' Agregar al carrito';//Leyenda del botón
+    //funcionalidad de los botones
+    minusBtn.addEventListener("click", () =>{
+        if (parseInt(counter.value) > 0) {
+            counter.value = parseInt(counter.value) - 1;
+        }
+    });
+    plusBtn.addEventListener("click", () =>{
+        const maxValue = 101; 
+        if (parseInt(counter.value) < maxValue) {
+            counter.value = parseInt(counter.value) + 1;
+        }
+    });
     //Apendeo de los botones
     plusBtn.appendChild(plusFA);//Le agregamos el <i class='..'> para que tenga el icono
     minusBtn.appendChild(minusFA);//Le agregamos el <i class='..'> para que tenga el icono
@@ -138,6 +150,7 @@ export function Display(imageContainer, name, price, currentContainer) {
     //Por último, este contenedor se lo agregamos al dialog:
     dialog.appendChild(displayContainer);
 }
+
 //Para visualizarlo, en el DOM se va a crear algo así:
 //<dialog>
 //   <div class="closeContainer">

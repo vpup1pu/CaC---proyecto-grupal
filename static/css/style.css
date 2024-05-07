@@ -380,14 +380,13 @@ mostrar los colores de los productos y el stock disponible. */
 .closeContainer{
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 5px;
 }
 
 .displayContainer{
     display: flex;
     width: 100%;
-    height: 95%;
-    padding: 15px 30px;
+    height: 90%;
+    padding: 10px 30px;
 }
 
 .rightContainer{
@@ -396,6 +395,83 @@ mostrar los colores de los productos y el stock disponible. */
     justify-content: center;
     align-items: center;
     width: 40%;
+    gap: 10px;
+}
+
+h1, h3{
+    text-align: center;
+}
+
+/* Botones del Dialog */
+.dialog button{
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    border: none;
+    background-color: var(--secondary-color);
+    color: var(--bg-color);
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+}
+
+.dialog button:hover {
+    background-color: var(--second-accent);
+}
+
+.dialog button:active{
+    background-color: var(--second-accent);
+    color: var(--secondary-color);
+}
+
+.dialog .closeBtn{
+    border-radius: 0 0 0 8px;
+}
+
+.dialog .plusBtn, .dialog .minusBtn{
+    padding: 5px;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+}
+
+.dialog .cartBtn{
+    font-size: 12px;
+    padding: 2px 5px;
+}
+
+.shoppingCart{
+    display: flex;
+    justify-content: center;
+    width: 20vw;
+    height: 5vh;
+    gap: 1px;
+}
+
+.quantity{
+    display: flex;
+    width: 7vw;
+}
+.counter{
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    text-align: center;
+    width: 3vw;
+    font-size: 16px;
+    color: var(--second-accent);
+    font-weight: 300;
+    background-color: var(--bg-color);
+}
+/* Chrome, Safari, Edge, Opera */
+.counter::-webkit-outer-spin-button,
+.counter::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.counter[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 /* FOOTER */

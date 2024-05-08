@@ -77,3 +77,21 @@ Por otro lado, fusioné lo que teníamos con lo que subió Matías al github. Un
 
 
 Por último, Matías agregó el favicon. Me mostraba que cuando lo quería renderizar, no aparecía en el navegador. Yo le consulté en su momento al profe porque había tenido el mismo problema, me dijo que es un bug conocido de LiveServer, la extensión que usamos para que nuestro proyecto se habra en el navegador. Agregandole un 1 al nombre del favicon, por alguna razón soluciona el problema. Me aconsejó igual que a la hora de entregar el proyecto, dejemos el nombre sin ninguna modificación, es decir *favicon.ico* porque el navegador siempre va a estar buscando ese nombre.
+
+##
+
+## 07/05/24
+
+Perdón por la cantidad de commits, me volví loca. En el lado bueno, **estamos online a través de Github** y cada cambio que realicen, lo van a hacer apuntando al main, así que con recargar la página deberían ver reflejados los cambios.<br>
+En lo malo, *presten atención a las cosas que cambiaron*. Necesité sacar los html de la carpeta porque la referencia que usaban para renderizar imágenes es diferente a la que tenía index.html, así que cuando funcionaba uno, fallaban los otros, y viceversa. *Con este cambio, todo funciona correctamente*.<br>
+Realicé algunas correcciones que me indicaba la herramienta inspector de google, y la que nos pasó el profe que cuenta como [parte del puntaje](https://validator.w3.org/#validate_by_upload).<br>
+Renombré el favicon, y cambié sus referencias, ahora lo renderiza bien sin necesidad de recurrir a nombres alternativos por el bug de LiveServer.<br>
+**Renombré las imágenes** porque cuando tenían un espacio en su nombre, perdía el rastro a su ubicación. *Para quienes tienen que cargar productos, tengan esto en cuenta.*<br>
+Finalmente, agregué los estilos al dialog, y la funcionalidad del contador.
+<br>
+>>Por mi parte, me queda terminar algunas funciones. Estoy creando una para poder seleccionar las variaciones de los productos (talle y color), y que muestre si está disponible o no. Si no esta disponible, quiero que algo cambie en el CSS, que diga sin stock o algo así. Y la otra función es pequeña, pero va a hacer que si un producto tiene type="Descuentos", que cambie algo en el CSS también para que lo demuestre.<br>
+
+Quedan hacer algunas cosas, crear imágenes para publicidades, hacer la responsividad, y agregar las dos pestañas que nos faltan con sus respectivos productos. Creo que también cambiar los comentarios para cuando lo entreguemos, así es más fácil recorrer el código y evaluarlo. <br>
+**Fuerza, queda poco**
+<br>
+>PD: les conviene o clonar este último commit por completo, o descargar individualmente los archivos prestando atención a dónde va cada cosa.

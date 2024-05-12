@@ -348,6 +348,25 @@ el mouse se encuentra arriba del contenedor.*/
     opacity: 1;
 }
 
+.ribbon{
+    display: inline-block;
+    padding: 5px 15px;
+	position: absolute;
+    right: 0px;
+    top: 0px;
+    line-height: 24px;
+	height:35px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+	border-radius: 0;
+    text-shadow: none;
+    font-weight: bold;
+    background-color: var(--second-accent);
+    color: var(--bg-color);
+}
+
 /*Por último, lilDisplay también tiene hijos. Como ambos son textos, modifique
 el CSS solo para que se alinee al centro, esto va a cambiar si es que queremos
 mostrar los colores de los productos y el stock disponible. */
@@ -356,6 +375,22 @@ mostrar los colores de los productos y el stock disponible. */
     text-align: center;
     padding: 5px;
 } 
+
+.priceCont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.priceDisc{
+    text-decoration:line-through;
+    color: var(--primary-color);
+}
+
+.newPrice{
+    font-weight: bold;
+}
 
 /* Dialog */
 .dialog::backdrop {
@@ -398,7 +433,7 @@ mostrar los colores de los productos y el stock disponible. */
     gap: 10px;
 }
 
-h1, h3{
+.rightContainer h1{
     text-align: center;
 }
 

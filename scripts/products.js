@@ -74,6 +74,18 @@ export const stuffNiño = [
     new Product("./static/img/1-Cost.jpg", "./static/img/1-Frent.jpg", "zapato", "Zapatos", 1000, [
      {size: 8, color: "white", availability: "disponible"}
     ])
+    new Product("./static/img/002side.jpg", "./static/img/002front.jpg", "zapato", "Zapatos", 1000, [
+        {size: 8, color: "white", availability: "disponible"}
+    ])
+    new Product("./static/img/006side.jpg", "./static/img/006front.jpg", "zapato", "Deportivos", 1000, [
+        {size: 8, color: "white", availability: "disponible"}
+    ])
+    new Product("./static/img/005side.jpg", "./static/img/005front.jpg", "zapato", "Indumentaria", 1000, [
+        {size: 8, color: "white", availability: "disponible"}
+    ])
+    new Product("./static/img/004side.jpg", "./static/img/004front.jpg", "zapato", "Zapatos", 1000, [
+        {size: 8, color: "white", availability: "disponible"}
+    ])
 ];
 
 //este array contiene todo el stock, se utiliza unicamente en app.js lo cree pensando en filtrar objetos en descuento.

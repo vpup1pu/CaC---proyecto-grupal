@@ -1,9 +1,10 @@
-export function Product(frontImage, sideImage, name, type, price, variations) {
+export function Product(frontImage, sideImage, name, type, price, discount, variations) {
     this.frontImage = frontImage;
     this.sideImage = sideImage;
     this.name = name;
     this.type = type;
     this.price = price;
+    this.discount = discount;
     this.variations = variations;
     this.outOfStock = function(){
         for(let i=0; i<this.variations.length; i++){
@@ -62,7 +63,7 @@ export let stuffMujer = [
         {size: 'L', color: 'white', availability: 'disponible'},
         {size: 'L', color: 'black', availability: 'fuera de stock'},
     ]),
-    new Product(`./static/img/05front.webp`, `./static/img/05side.webp`, 'Botitas Jaguar', 'Descuentos', 9899, [
+    new Product(`./static/img/05front.webp`, `./static/img/05side.webp`, 'Botitas Jaguar', 'Descuentos', 9899, 10, [
         {size: 37, color: 'black', availability: 'disponible'}
     ])
 ];
@@ -81,7 +82,7 @@ export let stuffNiño = [
     new Product("./static/img/005side.jpg", "./static/img/005front.jpg", "Remera Head", "Indumentaria", 15600, [
         {size: 8, color: "white", availability: "disponible"}
     ]),
-    new Product("./static/img/004side.jpg", "./static/img/004front.jpg", "Zapatillas Reebok", "Descuentos", 23000, [
+    new Product("./static/img/004side.jpg", "./static/img/004front.jpg", "Zapatillas Reebok", "Descuentos", 23000, 23, [
         {size: 8, color: "white", availability: "disponible"}
     ])
 ];

@@ -34,7 +34,7 @@ export function displayContainer(productsArray, currentContainer){
         shoeDiv.appendChild(imageContainer);
         shoeDiv.appendChild(lilDisplay);
 
-        onSale(shoe, shoePrice, 20, priceCont, imageContainer);
+        onSale(shoe, shoePrice, shoe.discount, priceCont, imageContainer);
     
         currentContainer.appendChild(shoeDiv);
     

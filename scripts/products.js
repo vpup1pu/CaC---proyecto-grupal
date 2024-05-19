@@ -67,8 +67,6 @@ export let stuffMujer = [
     ])
 ];
 
-//Aqui es donde cada uno va a agregar lo que corresponda.
-
 export let stuffHombre = [];
 export let stuffNiño = [ 
     new Product("./static/img/1-Cost.jpg", "./static/img/1-Frent.jpg", "Zapatillas Topper", "Urbanos", 10000, [
@@ -88,5 +86,4 @@ export let stuffNiño = [
     ])
 ];
 
-//este array contiene todo el stock, se utiliza unicamente en app.js lo cree pensando en filtrar objetos en descuento.
 export const stock = [stuffMujer, stuffHombre, stuffNiño];

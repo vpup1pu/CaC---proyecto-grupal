@@ -69,21 +69,21 @@ export let stuffMujer = [
 
 //Aqui es donde cada uno va a agregar lo que corresponda.
 
-export const stuffHombre = [];
-export const stuffNiño = [ 
-    new Product("./static/img/1-Cost.jpg", "./static/img/1-Frent.jpg", "zapato", "Zapatos", 1000, [
+export let stuffHombre = [];
+export let stuffNiño = [ 
+    new Product("./static/img/1-Cost.jpg", "./static/img/1-Frent.jpg", "Zapatillas Topper", "Urbanos", 10000, [
      {size: 8, color: "white", availability: "disponible"}
-    ])
-    new Product("./static/img/002side.jpg", "./static/img/002front.jpg", "zapato", "Zapatos", 1000, [
+    ]),
+    new Product("./static/img/002side.jpg", "./static/img/002front.jpg", "Zapatos Kickers", "Zapatos", 13000, [
         {size: 8, color: "white", availability: "disponible"}
-    ])
-    new Product("./static/img/006side.jpg", "./static/img/006front.jpg", "zapato", "Deportivos", 1000, [
+    ]),
+    new Product("./static/img/006side.jpg", "./static/img/006front.jpg", "Botines Warskin", "Deportivos", 54000, [
         {size: 8, color: "white", availability: "disponible"}
-    ])
-    new Product("./static/img/005side.jpg", "./static/img/005front.jpg", "zapato", "Indumentaria", 1000, [
+    ]),
+    new Product("./static/img/005side.jpg", "./static/img/005front.jpg", "Remera Head", "Indumentaria", 15600, [
         {size: 8, color: "white", availability: "disponible"}
-    ])
-    new Product("./static/img/004side.jpg", "./static/img/004front.jpg", "zapato", "Zapatos", 1000, [
+    ]),
+    new Product("./static/img/004side.jpg", "./static/img/004front.jpg", "zapato", "Descuentos", 23000, [
         {size: 8, color: "white", availability: "disponible"}
     ])
 ];

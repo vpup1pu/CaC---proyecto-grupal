@@ -81,7 +81,7 @@ export let stuffNiño = [
     new Product("./static/img/005side.jpg", "./static/img/005front.jpg", "Remera Head", "Indumentaria", 15600, [
         {size: 8, color: "white", availability: "disponible"}
     ]),
-    new Product("./static/img/004side.jpg", "./static/img/004front.jpg", "zapato", "Descuentos", 23000, [
+    new Product("./static/img/004side.jpg", "./static/img/004front.jpg", "Zapatillas Reebok", "Descuentos", 23000, [
         {size: 8, color: "white", availability: "disponible"}
     ])
 ];

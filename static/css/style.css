@@ -682,6 +682,7 @@ mostrar los colores de los productos y el stock disponible. */
     background: rgba(186, 173, 173, 0.3);
 }
 
+
 .info-form a {
     font-size: 16x;
     text-decoration: none;
@@ -724,4 +725,64 @@ mostrar los colores de los productos y el stock disponible. */
         height:63px;
         line-height: 66px;
 	}
+}
+
+/*CREADORES*/
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.creadores-header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1.25em; /* Tamaño de letra para el encabezado */
+}
+.creators-section {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 15px 30px;
+}
+
+.creator {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 40%;
+    margin: 20px 20px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.creator img {
+    width: 100%;
+    border-radius: 5px;
+    height: auto;
+}
+
+.creator h2 {
+    margin: 15px 0 10px;
+    font-size: 1.5em;
+}
+
+.creator p {
+    font-size: 1em;
+    color: #555;
+}
+
+.creadores-footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+    font-size: 0.85em; /* Tamaño de letra para el pie de página */
 }

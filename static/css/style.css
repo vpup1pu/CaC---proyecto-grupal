@@ -666,6 +666,10 @@ mostrar los colores de los productos y el stock disponible. */
     max-height: 150px;
 }
 
+input[type='text'], input[type='email'], input[type='tel'], textarea {
+    box-sizing: border-box;
+}
+
 .container-form .btn-enviar {
     padding: 15px 30px;
     font-size: 16px;
@@ -694,6 +698,12 @@ mostrar los colores de los productos y el stock disponible. */
 
 .info-form a:last-child {
     margin-right: 0; /* Elimina el margen derecho del último enlace para evitar espacio adicional */
+}
+
+.error{
+    font-size: 15px;
+    color: red;
+    margin-top: 0px;
 }
 
 /* BOTÓN WHATSAPP */
@@ -785,4 +795,8 @@ body {
     padding: 10px 0;
     margin-top: auto;
     font-size: 0.85em; /* Tamaño de letra para el pie de página */
+}
+
+.creadores-footer a{
+    color: var(--accent-color);
 }

@@ -86,24 +86,29 @@
             <br>
             <br>
             <br>
-            <form action="#" autocomplete="off">
+            <form id="myForm" action="#" autocomplete="off">
                 <div class="form-control">
                     <label for="name">Nombre</label>
                     <input type="text" id="name" name="nombre" class="campo">
+                    <span id="nameError" class="error"></span>
                 </div>
                 <div class="form-control">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" class="campo">
+                    <span id="emailError" class="error"></span>
                 </div>
                 <div class="form-control">
                     <label for="cell-phone">Telefono</label>
                     <input type="tel" id="cell-phone" name="cell-phone" class="campo">
+                    <span id="cell-phoneError" class="error"></span>
                     <div class="form-control">
                         <label for="mensaje">Mensaje</label>
-                        <textarea id="mensaje" name="mensaje"></textarea>
+                        <textarea id="mensaje" name="mensaje" onpaste="contador(message);" onkeyup="contador(message);"></textarea>
+                        <div id="charCount">Caracteres restantes: <span id="count">150</span></div>
+                        <span id="mensajeError" class="error"></span>
                     </div>
                     <div class="form-control">
-                        <input type="submit" name="enviar" value="enviar mensaje" class="btn-enviar">
+                        <button type="submit" name="enviar" class="btn-enviar">enviar mensaje</button>
                     </div>
                 </div>
             </form>
@@ -204,6 +209,7 @@
             </div>
         </div>
     </footer>
+    <script src="./scripts/formulario.js"></script>
 </body>
 
 </html>

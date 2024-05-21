@@ -57,7 +57,7 @@ export let stuffMujer = [
         { size: 40, color: 'green', availability: 'fuera de stock'},
         { size: 40, color: 'white', availability: 'fuera de stock'}
     ]),
-    new Product(`./static/img/07front.webp`, `./static/img/07side.webp`, 'Sandalias Modare', 'Zapatos', 12000, [
+    new Product(`./static/img/07front.webp`, `./static/img/07side.webp`, 'Sandalias Modare', 'Zapatos', 62000, [
         {size: 37, color: 'brown', availability: 'disponible'},
         {size: 38, color: 'brown', availability: 'fuera de stock'},
         {size: 39, color: 'brown', availability: 'disponible'},
@@ -73,7 +73,7 @@ export let stuffMujer = [
         {size: 40, color: 'lime', availability: 'disponible'},
         {size: 40, color: 'red', availability: 'fuera de stock'}
     ]),
-    new Product(`./static/img/09front.webp`, `./static/img/09side.webp`, 'Remerón Tropical', 'Indumentaria', 7299, [
+    new Product(`./static/img/09front.webp`, `./static/img/09side.webp`, 'Remerón Tropical', 'Indumentaria', 27299, [
         {size: 'S', color: 'white', availability: 'disponible'},
         {size: 'S', color: 'black', availability: 'disponible'},
         {size: 'M', color: 'white', availability: 'fuera de stock'},
@@ -81,7 +81,7 @@ export let stuffMujer = [
         {size: 'L', color: 'white', availability: 'disponible'},
         {size: 'L', color: 'black', availability: 'fuera de stock'},
     ]),
-    new Product(`./static/img/10front.webp`, `./static/img/10side.webp`, 'Botitas Jaguar', 'Descuentos', 9899, 10, [
+    new Product(`./static/img/10front.webp`, `./static/img/10side.webp`, 'Botitas Jaguar', 'Descuentos', 39899, 10, [
         {size: 37, color: 'black', availability: 'disponible'}
     ])
 ];

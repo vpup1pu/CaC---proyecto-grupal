@@ -24,8 +24,26 @@ export function Product(frontImage, sideImage, name, type, price, discount, vari
     }
 };
 
+export let stuffNiño = [ 
+    new Product("./static/img/01front.jpg", "./static/img/01side.jpg", "Zapatillas Topper", "Urbanos", 80000, [
+     {size: 8, color: "black", availability: "disponible"}
+    ]),
+    new Product("./static/img/02front.jpg", "./static/img/02side.jpg", "Zapatos Kickers", "Zapatos", 113000, [
+        {size: 8, color: "brown", availability: "disponible"}
+    ]),
+    new Product("./static/img/03front.jpg", "./static/img/03side.jpg", "Botines Warskin", "Deportivos", 94000, [
+        {size: 'M', color: "black", availability: "disponible"}
+    ]),
+    new Product("./static/img/04front.jpg", "./static/img/04side.jpg", "Remera Head", "Indumentaria", 15600, [
+        {size: 8, color: "blue", availability: "disponible"}
+    ]),
+    new Product("./static/img/05front.jpg", "./static/img/05side.jpg", "Zapatillas Reebok", "Descuentos", 83000, 23, [
+        {size: 8, color: "white", availability: "disponible"}
+    ])
+];
+
 export let stuffMujer = [
-    new Product(`./static/img/01front.avif`, `./static/img/01side.avif`, 'Zapatillas Gazelle', 'Urbanos', 183999, [
+    new Product(`./static/img/06front.avif`, `./static/img/06side.avif`, 'Zapatillas Gazelle', 'Urbanos', 183999, [
         { size: 37, color: 'gray', availability: 'disponible'},
         { size: 37, color: 'green', availability: 'fuera de stock'},
         { size: 37, color: 'white', availability: 'disponible'},
@@ -39,13 +57,13 @@ export let stuffMujer = [
         { size: 40, color: 'green', availability: 'fuera de stock'},
         { size: 40, color: 'white', availability: 'fuera de stock'}
     ]),
-    new Product(`./static/img/02front.webp`, `./static/img/02side.webp`, 'Sandalias Modare', 'Zapatos', 12000, [
+    new Product(`./static/img/07front.webp`, `./static/img/07side.webp`, 'Sandalias Modare', 'Zapatos', 12000, [
         {size: 37, color: 'brown', availability: 'disponible'},
         {size: 38, color: 'brown', availability: 'fuera de stock'},
         {size: 39, color: 'brown', availability: 'disponible'},
         {size: 40, color: 'brown', availability: 'disponible'}
     ]),
-    new Product(`./static/img/03front.avif`, `./static/img/03side.avif`, 'Zapatillas Rapidmove ADV', 'Deportivos', 154999, [
+    new Product(`./static/img/08front.avif`, `./static/img/08side.avif`, 'Zapatillas Rapidmove ADV', 'Deportivos', 154999, [
         {size: 37, color: 'lime', availability: 'disponible'},
         {size: 37, color: 'red', availability: 'disponible'},
         {size: 38, color: 'lime', availability: 'fuera de stock'},
@@ -55,7 +73,7 @@ export let stuffMujer = [
         {size: 40, color: 'lime', availability: 'disponible'},
         {size: 40, color: 'red', availability: 'fuera de stock'}
     ]),
-    new Product(`./static/img/04front.webp`, `./static/img/04side.webp`, 'Remerón Tropical', 'Indumentaria', 7299, [
+    new Product(`./static/img/09front.webp`, `./static/img/09side.webp`, 'Remerón Tropical', 'Indumentaria', 7299, [
         {size: 'S', color: 'white', availability: 'disponible'},
         {size: 'S', color: 'black', availability: 'disponible'},
         {size: 'M', color: 'white', availability: 'fuera de stock'},
@@ -63,28 +81,27 @@ export let stuffMujer = [
         {size: 'L', color: 'white', availability: 'disponible'},
         {size: 'L', color: 'black', availability: 'fuera de stock'},
     ]),
-    new Product(`./static/img/05front.webp`, `./static/img/05side.webp`, 'Botitas Jaguar', 'Descuentos', 9899, 10, [
+    new Product(`./static/img/10front.webp`, `./static/img/10side.webp`, 'Botitas Jaguar', 'Descuentos', 9899, 10, [
         {size: 37, color: 'black', availability: 'disponible'}
     ])
 ];
 
-export let stuffHombre = [];
-export let stuffNiño = [ 
-    new Product("./static/img/1-Cost.jpg", "./static/img/1-Frent.jpg", "Zapatillas Topper", "Urbanos", 10000, [
-     {size: 8, color: "white", availability: "disponible"}
-    ]),
-    new Product("./static/img/002side.jpg", "./static/img/002front.jpg", "Zapatos Kickers", "Zapatos", 13000, [
-        {size: 8, color: "white", availability: "disponible"}
-    ]),
-    new Product("./static/img/006side.jpg", "./static/img/006front.jpg", "Botines Warskin", "Deportivos", 54000, [
-        {size: 8, color: "white", availability: "disponible"}
-    ]),
-    new Product("./static/img/005side.jpg", "./static/img/005front.jpg", "Remera Head", "Indumentaria", 15600, [
-        {size: 8, color: "white", availability: "disponible"}
-    ]),
-    new Product("./static/img/004side.jpg", "./static/img/004front.jpg", "Zapatillas Reebok", "Descuentos", 23000, 23, [
-        {size: 8, color: "white", availability: "disponible"}
-    ])
+export let stuffHombre = [new Product(`./static/img/11front.webp`, `./static/img/11side.webp`, 'Zapatilla Ringo Bay', 'Urbanos', 109000, [
+    {size: 40, color: 'black', availability: 'disponible'}
+]), 
+new Product(`./static/img/12front.webp`, `./static/img/12side.webp`, 'Zapato Hush Puppies Cities', 'Zapatos', 155000, [
+    {size: 40, color: 'black', availability: 'disponible'}
+]),
+new Product(`./static/img/13front.jpg`, `./static/img/13side.webp`, 'Zapatilla Hush Puppies Trace', 'Deportivos', 110000, [
+    {size: 40, color: 'blue', availability: 'disponible'}
+]),
+new Product(`./static/img/14front.webp`, `./static/img/14side.webp`, 'Remera Estampada Don-T', 'Indumentaria', 26500, [
+    {size: 'M', color: 'white', availability: 'disponible'}
+]),
+new Product(`./static/img/15front.webp`, `./static/img/15side.webp`, 'Zapatilla Hush Puppies Willy Mid', 'Descuentos', 89500, 30, [
+    {size: 40, color: 'brown', availability: 'disponible'}
+])
 ];
 
-export const stock = [stuffMujer, stuffHombre, stuffNiño];
+
+export const stock = [stuffNiño, stuffMujer, stuffHombre];

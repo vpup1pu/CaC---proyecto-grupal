@@ -277,7 +277,7 @@ Me costó un huevo, mucho probar. Si lo pueden mejorar, porfa pasen el código;
 si creen que queda mejor con flex, no me opongo para nada.
 Acá agregué los diferentes contenedores, tienen el mismo estilo pero si se fijan, 
 todos se ven iguales. Acá iria el del html hombre y el de niño*/
-.displayMujer, .displayAd, .displayNiños {
+.displayMujer, .displayAd, .displayNiños, .displayHombre {
     flex: 1;
     display: grid;
     grid-template-columns: repeat(4, 1fr);

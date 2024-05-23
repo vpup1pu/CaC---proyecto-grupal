@@ -64,7 +64,7 @@ function onSale(product, priceSpan, discount, containerText, containerImg) {
     }
 }
 
-export function Display(imageContainer, name, price, currentContainer, array1, array2) {
+function Display(imageContainer, name, price, currentContainer, array1, array2) {
     const dialog = document.createElement('dialog');
     dialog.classList.add('dialog');
     currentContainer.appendChild(dialog);
@@ -78,6 +78,7 @@ export function Display(imageContainer, name, price, currentContainer, array1, a
             radio.checked = false;
         })
         dialog.close();
+        currentContainer.removeChild(dialog);
     });
 
     const closeContainer = document.createElement('div');
@@ -139,6 +140,15 @@ export function Display(imageContainer, name, price, currentContainer, array1, a
             counter.value = parseInt(counter.value) + 1;
         }
     });
+    cartBtn.addEventListener("click", ()=>{
+        const btns = document.querySelectorAll('input[type="radio"');
+        btns.forEach(radio => {
+            radio.checked = false;
+        })
+        counter.value = 0;
+        const lastRibbon = document.querySelector('.ribbonTR');
+        lastRibbon.style.display = 'none';
+    })
 
     plusBtn.appendChild(plusFA);
     minusBtn.appendChild(minusFA);
@@ -158,7 +168,7 @@ export function Display(imageContainer, name, price, currentContainer, array1, a
     dialog.appendChild(displayContainer);
 }
 
-export function filter(typeVariation, currentContainer) {
+function filter(typeVariation, currentContainer) {
     let filteredContainer = currentContainer.slice();
     for (let i = filteredContainer.length - 1; i >= 0; i--) {
         if (filteredContainer[i].type !== typeVariation) {
@@ -179,34 +189,44 @@ export function filteredBtn(arrayBtn, typeVariation, arrayCurrent, currentContai
 
 function variations(array, array2, prop1, prop2, currentContainer, imgCont) {
     const aSize = options(array, prop1);
+    console.log(aSize);
     const divS = document.createElement('div');
     aSize.forEach(size => {
+        const label = document.createElement('label');
+        label.classList.add('optionLabel');
+        label.htmlFor = `${size}`;
+        divS.appendChild(label);
         const sizeBtn = document.createElement('input');
         sizeBtn.type = "radio";
         sizeBtn.name = "size";
         sizeBtn.value = `${size}`;
         sizeBtn.id = `${size}`;
-        divS.appendChild(sizeBtn);
-        const label = document.createElement('label');
-        label.htmlFor = `${size}`;
-        label.innerHTML = `${size}`;
-        divS.appendChild(label);
+        label.appendChild(sizeBtn);
+        const value = document.createElement('span');
+        value.classList.add('optionName');
+        value.innerHTML = `${size}`;
+        label.appendChild(value);
     });
     currentContainer.appendChild(divS);
 
     const aColor = options(array, prop2);
+    console.log(aColor);
     const divC = document.createElement('div');
     aColor.forEach(color => {
+        const label = document.createElement('label');
+        label.classList.add('optionLabel');
+        label.htmlFor = `${color}`;
+        divC.appendChild(label);
         const colorBtn = document.createElement('input');
         colorBtn.type = "radio";
         colorBtn.name = "color";
         colorBtn.value = `${color}`;
         colorBtn.id = `${color}`;
-        divC.appendChild(colorBtn);
-        const label = document.createElement('label');
-        label.htmlFor = `${color}`;
-        label.innerHTML = `${color}`;
-        divC.appendChild(label);
+        label.appendChild(colorBtn);
+        const value = document.createElement('span');
+        value.classList.add('optionName');
+        value.innerHTML = `${color}`;
+        label.appendChild(value);
     })
     currentContainer.appendChild(divC);
 
@@ -232,7 +252,9 @@ function options(array, property) {
 
 function checkAvailability(array, imgCont) {
     const sizeC = selectedChoice('size');
+    console.log(sizeC);
     const colorC = selectedChoice('color');
+    console.log(colorC);
     let ribbonDiv = imgCont.querySelector('.ribbonTR');
 
     if (!ribbonDiv) {
@@ -249,14 +271,14 @@ function checkAvailability(array, imgCont) {
             const selectedVariation = product.variations.find(variation => variation.size == sizeC && variation.color == colorC);
             if (selectedVariation) {
                 if (selectedVariation.availability == 'fuera de stock') {
+                    console.log(selectedVariation.availability);
                     ribbonDiv.style.display = 'block';
                 } else {
+                    console.log(selectedVariation.availability);
                     ribbonDiv.style.display = 'none';
                 }
             }
         });
-    } else {
-        ribbonDiv.style.display = 'none';
     }
 }
 

@@ -217,12 +217,13 @@ h4 {
 .main-ad {
     display: flex;
     justify-content: center;
-    width: 100%;
+    max-width: 100%;
     height: 40vh;
     box-sizing: border-box;  
     margin: 0;
     padding: 0;
     background-color: var(--dark-color);
+    overflow: hidden;
 }
 
 /*Contenedor del titulo de la pagina donde nos encontramos*/
@@ -309,13 +310,15 @@ aside ul li a {
 .displayAd,
 .displayNiños,
 .displayHombre {
-    flex: 1;
     display: grid;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 20px;
     padding: 30px;
-    overflow-y: scroll;
+    overflow: hidden;
 }
 
 /*.shoeDiv es el cuadradito redondeado donde se ven las imágenes del producto, el nombre
@@ -324,7 +327,6 @@ de cada producto y si estan disponibles o fuera de stock)*/
 .shoeDiv {
     width: 200px;
     height: 250px;
-    margin-left: 5%;
     position: relative;
     overflow: hidden;
     display: flex;

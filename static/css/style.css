@@ -953,3 +953,7 @@ body {
 .creadores-footer a {
     color: var(--accent-color);
 }
+
+.copyright>a{
+    color: var(--second-accent);
+}

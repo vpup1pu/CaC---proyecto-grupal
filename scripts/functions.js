@@ -189,7 +189,6 @@ export function filteredBtn(arrayBtn, typeVariation, arrayCurrent, currentContai
 
 function variations(array, prop1, prop2, currentContainer, imgCont) {
     const aSize = options(array, prop1);
-    console.log(aSize);
     const divS = document.createElement('div');
     aSize.forEach(size => {
         const label = document.createElement('label');
@@ -210,7 +209,6 @@ function variations(array, prop1, prop2, currentContainer, imgCont) {
     currentContainer.appendChild(divS);
 
     const aColor = options(array, prop2);
-    console.log(aColor);
     const divC = document.createElement('div');
     aColor.forEach(color => {
         const label = document.createElement('label');
@@ -252,9 +250,7 @@ function options(array, property) {
 
 function checkAvailability(array, imgCont) {
     const sizeC = selectedChoice('size');
-    console.log(sizeC);
     const colorC = selectedChoice('color');
-    console.log(colorC);
     let ribbonDiv = imgCont.querySelector('.ribbonTR');
 
     if (!ribbonDiv) {
@@ -272,10 +268,8 @@ function checkAvailability(array, imgCont) {
         for (let option of array) {
             if (option.size == sizeC && option.color == colorC) {
                 if (option.availability == 'fuera de stock') {
-                    console.log(option.availability);
                     ribbonDiv.style.display = 'block';
                 } else {
-                    console.log(option.availability);
                     ribbonDiv.style.display = 'none';
                 }
                 found = true;

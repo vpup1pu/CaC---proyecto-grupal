@@ -20,42 +20,26 @@ class Product {
 
 export let stuffNiño = [
     new Product(`./static/img/01front.jpg`, `./static/img/01side.jpg`, 'Zapatillas Topper', 'Urbanos', 80000, [
-        { size: 8, color: 'negro', availability: 'fuera de stock' },
+        { size: 8, color: 'negro', availability: 'disponible' },
         { size: 8, color: 'azul', availability: 'disponible' },
-        { size: 8, color: 'blanco', availability: 'disponible' },
         { size: 9, color: 'negro', availability: 'disponible' },
         { size: 9, color: 'azul', availability: 'fuera de stock' },
-        { size: 9, color: 'blanco', availability: 'fuera de stock' },
-        { size: 10, color: 'negro', availability: 'fuera de stock' },
-        { size: 10, color: 'azul', availability: 'disponible' },
-        { size: 10, color: 'blanco', availability: 'disponible' }
+        { size: 10, color: 'negro', availability: 'disponible' },
+        { size: 10, color: 'azul', availability: 'fuera de stock' }
     ]),
     new Product(`./static/img/02front.jpg`, `./static/img/02side.jpg`, 'Zapatos Kickers', 'Zapatos', 113000, [
-        { size: 8, color: 'marrón', availability: 'fuera de stock' },
-        { size: 8, color: 'negro', availability: 'disponible' },
+        { size: 8, color: 'marrón', availability: 'disponible' },
         { size: 9, color: 'marrón', availability: 'disponible' },
-        { size: 9, color: 'negro', availability: 'fuera de stock' },
         { size: 10, color: 'marrón', availability: 'fuera de stock' },
-        { size: 10, color: 'negro', availability: 'disponible' }
     ]),
     new Product(`./static/img/03front.jpg`, `./static/img/03side.jpg`, 'Botines Warskin', 'Deportivos', 94000, [
-        { size: 8, color: 'azul', availability: 'fuera de stock' },
         { size: 8, color: 'negro', availability: 'disponible' },
-        { size: 9, color: 'azul', availability: 'fuera de stock' },
-        { size: 9, color: 'negro', availability: 'disponible' },
-        { size: 10, color: 'azul', availability: 'fuera de stock' },
-        { size: 10, color: 'negro', availability: 'fuera de stock' }
     ]),
     new Product(`./static/img/04front.jpg`, `./static/img/04side.jpg`, 'Remera Head', 'Indumentaria', 15600, [
-        { size: 14, color: 'azul', availability: 'fuera de stock' },
-        { size: 16, color: 'azul', availability: 'disponible' },
-        { size: 'S', color: 'azul', availability: 'fuera de stock' },
-        { size: 'M', color: 'azul', availability: 'disponible' }
+        { size: 14, color: "azul", availability: "disponible" }
     ]),
-    new Product(`./static/img/05front.jpg`, `./static/img/05side.jpg`, 'Zapatillas Reebok', 'Descuentos', 83000, [
-        { size: 8, color: 'blanco', availability: 'disponible' },
-        { size: 9, color: 'blanco', availability: 'fuera de stock' },
-        { size: 10, color: 'blanco', availability: 'fuera de stock' },
+    new Product("./static/img/05front.jpg", "./static/img/05side.jpg", "Zapatillas Reebok", "Descuentos", 83000, [
+        { size: 8, color: "blanco", availability: "disponible" }
     ], 23)
 ];
 
@@ -108,8 +92,8 @@ export let stuffMujer = [
 export let stuffHombre = [
     new Product(`./static/img/11front.webp`, `./static/img/11side.webp`, 'Zapatilla Ringo Bay', 'Urbanos', 109000, [
         { size: 40, color: 'negro', availability: 'disponible' },
-        { size: 41, color: 'negro', availability: 'fuera de stock' },
-        { size: 42, color: 'negro', availability: 'disponible' }
+        { size: 41, color: 'negro', availability: 'disponible' },
+        { size: 42, color: 'negro', availability: 'fuera de stock' }
     ]),
     new Product(`./static/img/12front.webp`, `./static/img/12side.webp`, 'Zapato Hush Puppies Cities', 'Zapatos', 155000, [
         { size: 40, color: 'negro', availability: 'disponible' },
@@ -130,7 +114,10 @@ export let stuffHombre = [
     new Product(`./static/img/15front.webp`, `./static/img/15side.webp`, 'Zapatilla Hush Puppies Willy Mid', 'Descuentos', 89500, [
         { size: 40, color: 'marrón', availability: 'fuera de stock' },
         { size: 41, color: 'marrón', availability: 'disponible' }
-    ], 30)
+    ], 30),
+    new Product(`./static/img/15front.webp`, `./static/img/15side.webp`, 'Zapatillas truchas', 'Urbanos', 55678, [
+        {size: 41, color: 'verde', availability: 'disponible'}
+    ])
 ];
 
 export const stock = [stuffNiño, stuffMujer, stuffHombre];

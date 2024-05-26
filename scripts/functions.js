@@ -44,7 +44,7 @@ export function displayContainer(productsArray, currentContainer) {
             let clone_priceCont = priceCont.cloneNode(true);
             clone_priceCont.classList.add('priceCont');
             let varArray = shoe.variations;
-            Display(clone_imageContainer, shoe.name, clone_priceCont, currentContainer, varArray, productsArray);
+            Display(clone_imageContainer, shoe.name, clone_priceCont, currentContainer, varArray);
         });
     });
 }
@@ -64,7 +64,7 @@ function onSale(product, priceSpan, discount, containerText, containerImg) {
     }
 }
 
-function Display(imageContainer, name, price, currentContainer, array1, array2) {
+function Display(imageContainer, name, price, currentContainer, array1) {
     const dialog = document.createElement('dialog');
     dialog.classList.add('dialog');
     currentContainer.appendChild(dialog);
@@ -97,7 +97,7 @@ function Display(imageContainer, name, price, currentContainer, array1, array2) 
     const optionContainer = document.createElement('div');
     optionContainer.classList.add('optionContainer');
 
-    variations(array1, array2, 'size', 'color', optionContainer, imageContainer);
+    variations(array1, 'size', 'color', optionContainer, imageContainer);
 
     const description = document.createElement('h1');
     description.textContent = name;
@@ -187,7 +187,7 @@ export function filteredBtn(arrayBtn, typeVariation, arrayCurrent, currentContai
     })
 }
 
-function variations(array, array2, prop1, prop2, currentContainer, imgCont) {
+function variations(array, prop1, prop2, currentContainer, imgCont) {
     const aSize = options(array, prop1);
     console.log(aSize);
     const divS = document.createElement('div');
@@ -233,10 +233,10 @@ function variations(array, array2, prop1, prop2, currentContainer, imgCont) {
     const sizeRadios = divS.querySelectorAll('input[name="size"]');
     const colorRadios = divC.querySelectorAll('input[name="color"]');
     sizeRadios.forEach(radio => {
-        radio.addEventListener('change', () => checkAvailability(array2, imgCont));
+        radio.addEventListener('change', () => checkAvailability(array, imgCont));
     });
     colorRadios.forEach(radio => {
-        radio.addEventListener('change', () => checkAvailability(array2, imgCont));
+        radio.addEventListener('change', () => checkAvailability(array, imgCont));
     });
 }
 
@@ -266,19 +266,26 @@ function checkAvailability(array, imgCont) {
         ribbonDiv.appendChild(spanOOS);
         imgCont.appendChild(ribbonDiv);
     }
+
     if (sizeC && colorC) {
-        array.forEach(product => {
-            const selectedVariation = product.variations.find(variation => variation.size == sizeC && variation.color == colorC);
-            if (selectedVariation) {
-                if (selectedVariation.availability == 'fuera de stock') {
-                    console.log(selectedVariation.availability);
+        let found = false;
+        for (let option of array) {
+            if (option.size == sizeC && option.color == colorC) {
+                if (option.availability == 'fuera de stock') {
+                    console.log(option.availability);
                     ribbonDiv.style.display = 'block';
                 } else {
-                    console.log(selectedVariation.availability);
+                    console.log(option.availability);
                     ribbonDiv.style.display = 'none';
                 }
+                found = true;
+                break; // Exit loop once the matching variation is found
             }
-        });
+        }
+        if (!found) {
+            // If no matching variation is found, hide the ribbon
+            ribbonDiv.style.display = 'none';
+        }
     }
 }
 

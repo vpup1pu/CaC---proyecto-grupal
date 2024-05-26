@@ -1,4 +1,3 @@
-/*Hola, la única modificacion que agregué aca fue en los div donde se van a cargar los productos. Solo cambie nombres*/
 :root {
     font-family: 'Roboto', sans-serif;
     --primary-color: #333333;
@@ -16,18 +15,20 @@
     letter-spacing: 1.5px;
 }
 
-ul{
+ul {
     list-style-type: none;
 }
 
-a{
+a {
     text-decoration: none;
     color: var(--primary-color);
 }
 
 a:hover {
-    opacity: 0.7; /* Cambia la opacidad al 70% al hacer hover */
-    transition: opacity 0.3s ease; /* Agrega una transición suave */
+    opacity: 0.7;
+    /* Cambia la opacidad al 70% al hacer hover */
+    transition: opacity 0.3s ease;
+    /* Agrega una transición suave */
 }
 
 h4 {
@@ -76,24 +77,33 @@ h4 {
 }
 
 .col-1 img#logo_calzados {
-    width: 150px; /* Establece el ancho deseado */
-    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+    width: 150px;
+    /* Establece el ancho deseado */
+    height: auto;
+    /* Permite que la altura se ajuste automáticamente para mantener la proporción */
     margin-left: 2rem;
 }
+
 .col-1 a:hover img#logo_calzados {
-    opacity: 0.7; /* Cambia la opacidad al 70% al hacer hover */
-    transition: opacity 0.3s ease; /* Agrega una transición suave */
+    opacity: 0.7;
+    /* Cambia la opacidad al 70% al hacer hover */
+    transition: opacity 0.3s ease;
+    /* Agrega una transición suave */
 }
 
 .col-2 {
     flex: 1;
     display: flex;
-    justify-content: flex-end; /* Alinea los elementos a la derecha */
-    align-items: center; /* Alinea verticalmente los elementos */
+    justify-content: flex-end;
+    /* Alinea los elementos a la derecha */
+    align-items: center;
+    /* Alinea verticalmente los elementos */
     margin-right: 2rem;
 }
+
 .col-2 a {
-    margin-right: 20px; /* Añade un margen entre los elementos */
+    margin-right: 20px;
+    /* Añade un margen entre los elementos */
     font-size: 0.8rem;
     color: var(--bg-color);
 }
@@ -132,35 +142,40 @@ h4 {
     position: absolute;
     background-color: #f3f3f3;
     min-width: 160px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.7);
     z-index: 1;
-    top: 100%; /* Alinea el menú desplegable con la parte inferior del tag "Hombres" */
-    left: 0; /* Alinea el menú desplegable con el borde izquierdo del tag "Hombres" */
-    opacity: 0; /* Inicialmente, el menú desplegable estará oculto */
-    transition: opacity 0.3s ease; /* Transición suave de la opacidad */
-    transform: translateY(-10px); /* Desplazamiento hacia arriba para simular un efecto de aparición */
+    top: 100%;
+    /* Alinea el menú desplegable con la parte inferior del tag "Hombres" */
+    left: 0;
+    /* Alinea el menú desplegable con el borde izquierdo del tag "Hombres" */
+    opacity: 0;
+    /* Inicialmente, el menú desplegable estará oculto */
+    transition: opacity 0.3s ease;
+    /* Transición suave de la opacidad */
+    transform: translateY(-10px);
+    /* Desplazamiento hacia arriba para simular un efecto de aparición */
 }
 
 .dropdown-content a {
     font-size: 13px;
     padding: 12px 16px;
     display: block;
-    border-bottom: 1px solid #ccc; /* Línea separadora entre elementos */
-    transition: background-color 0.3s; /* Agrega una transición suave al cambio de color de fondo */
+    border-bottom: 1px solid #ccc;
+    /* Línea separadora entre elementos */
+    transition: background-color 0.3s;
+    /* Agrega una transición suave al cambio de color de fondo */
 }
 
-/*El dropdown original tenia declarado background-color: #ddd; lo que hacía que 
-la sombra sea gricesita. Pensé que estaría bueno agregar pequeños detalles sutilez 
-del violeta del logo y por eso lo modifiqué para que se vea sólo cuando se pasa
-el mouse por arriba*/
 .dropdown-content a:hover {
     background-color: var(--second-accent);
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
-    opacity: 1; /* Al hacer hover, el menú desplegable se hace visible */
-    transform: translateY(0); /* La transformación vuelve a su posición original */
+    opacity: 1;
+    /* Al hacer hover, el menú desplegable se hace visible */
+    transform: translateY(0);
+    /* La transformación vuelve a su posición original */
 }
 
 .search-box {
@@ -189,6 +204,7 @@ el mouse por arriba*/
 
 /* MAIN */
 
+
 /*Contenedor que encontramos en todos los html*/
 .main {
     height: 100%;
@@ -198,18 +214,18 @@ el mouse por arriba*/
 }
 
 /*Contenedor de la publicidad que aparece en index.html*/
-.main-ad{
+.main-ad {
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 100%;
-    height: 30vh;
-    border: 2px solid var(--second-accent);
+    height: 40vh;
+    box-sizing: border-box;  
+    margin: 0;
+    padding: 0;
 }
 
-/*Contenedor del titulo de la pagina donde nos encontramos, se encuentra, por el momento, en 
-tab-mujer.html*/
-.main-title{
+/*Contenedor del titulo de la pagina donde nos encontramos*/
+.main-title {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -218,7 +234,7 @@ tab-mujer.html*/
 }
 
 /*Contenedor donde vamos a ver los filtros por un lado y los productos por el otro*/
-.main-body{
+.main-body {
     display: flex;
     height: 90%;
 }
@@ -228,13 +244,16 @@ tab-mujer.html*/
     flex-direction: column;
     width: 20vw;
     padding: 10px;
-    box-shadow: 0 8px 8px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.3);
 }
 
 aside {
-    width: 20%; /* Ajusta el ancho según el diseño general de tu página */
-    padding: 20px; /* Espacio alrededor del contenido dentro del aside */
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    width: 20%;
+    /* Ajusta el ancho según el diseño general de tu página */
+    padding: 20px;
+    /* Espacio alrededor del contenido dentro del aside */
+    box-sizing: border-box;
+    /* Asegura que el padding no afecte el ancho total */
 }
 
 aside.categories {
@@ -244,40 +263,48 @@ aside.categories {
 }
 
 aside h3 {
-    margin-bottom: 10px; /* Espacio debajo del título */
+    margin-bottom: 10px;
+    /* Espacio debajo del título */
 }
 
 aside hr {
-    border: 0; /* Elimina el borde predeterminado */
-    height: 1px; /* Altura de la línea */
-    background-color: var(--accent-color); /* Color de la línea */
-    margin-bottom: 20px; /* Espacio debajo de la línea */
+    border: 0;
+    /* Elimina el borde predeterminado */
+    height: 1px;
+    /* Altura de la línea */
+    background-color: var(--accent-color);
+    /* Color de la línea */
+    margin-bottom: 20px;
+    /* Espacio debajo de la línea */
 }
 
 aside ul {
-    list-style: none; /* Elimina los estilos predeterminados de lista */
-    padding: 0; /* Elimina el padding predeterminado */
-    margin: 0; /* Elimina el margen predeterminado */
+    list-style: none;
+    /* Elimina los estilos predeterminados de lista */
+    padding: 0;
+    /* Elimina el padding predeterminado */
+    margin: 0;
+    /* Elimina el margen predeterminado */
 }
 
 aside ul li {
-    margin-bottom: 10px; /* Espacio entre elementos de la lista */
+    margin-bottom: 10px;
+    /* Espacio entre elementos de la lista */
 }
 
 aside ul li a {
-    text-decoration: none; /* Elimina el subrayado de los enlaces */
-    color: var(--dark-color); /* Color del texto para los enlaces */
-    font-size: 1rem; /* Tamaño del texto para los enlaces */
-    display: block; /* Hace que los enlaces ocupen todo el espacio disponible de la lista */
+    text-decoration: none;
+    /* Elimina el subrayado de los enlaces */
+    color: var(--dark-color);
+    /* Color del texto para los enlaces */
+    font-size: 1rem;
+    /* Tamaño del texto para los enlaces */
+    display: block;
+    /* Hace que los enlaces ocupen todo el espacio disponible de la lista */
 }
 
-/*Este es el contenedor donde apareceran los productos. Decidí darle display:grid
-porque en teoria debería ser más facil alinear los productos entre filas y columnas.
-Me costó un huevo, mucho probar. Si lo pueden mejorar, porfa pasen el código;
-si creen que queda mejor con flex, no me opongo para nada.
-Acá agregué los diferentes contenedores, tienen el mismo estilo pero si se fijan, 
-todos se ven iguales. Acá iria el del html hombre y el de niño*/
-.displayMujer, .displayAd, .displayNiños {
+
+.displayMujer, .displayAd, .displayNiños, .displayHombre {
     flex: 1;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -302,24 +329,14 @@ de cada producto y si estan disponibles o fuera de stock)*/
     border-radius: 15px;
 }
 
-/*Ninguno de estos contenedores tienen display:flex, pero como heredan del padre .shoeDiv
-sus posiciones pueden ajustarse, por eso flex:1 que le dice al div 'imageContainer'
-que ocupe todo el lugar disponible y no se achique si encojen la página.*/
-.imageContainer{
+.imageContainer {
     flex: 1;
     position: relative;
     min-height: 0;
 }
 
-/*Esta parte recibe la animación. Si quieren chusmear lo que hace, comenten
-las lineas de abajo hasta lilDisplay. Van a ver que ambas se encuentran visibles, 
-la animación lo que hace es que 'sideImage' sea transparente y cuando pasamos
-el mouse por arriba del contenedor 'shoeDiv', 'sideImage' cambie su opacidad a 1
-mientras que 'frontImage' se vuelva transparente. Tambien le agregué un detalle
-para que cada 'shoeDiv' resalte, se levanta y brilla en color violeta mientras
-el mouse se encuentra arriba del contenedor.*/
-
-.frontImage, .sideImage{
+.frontImage,
+.sideImage {
     position: absolute;
     top: 0;
     left: 0;
@@ -329,66 +346,107 @@ el mouse se encuentra arriba del contenedor.*/
     transition: opacity 0.3s ease-in-out;
 }
 
-.sideImage{
+.sideImage {
     opacity: 0;
 }
 
-.shoeDiv:hover{
+.shoeDiv:hover {
     transform: translateY(-10px);
     cursor: pointer;
     border: 2px solid var(--second-accent);
-    box-shadow: 0px 8px 16px 0 rgba(195,115,215,0.3);
+    box-shadow: 0px 8px 16px 0 rgba(195, 115, 215, 0.3);
 }
 
-.shoeDiv:hover .frontImage, .imageContainer:hover .frontImage{
+.shoeDiv:hover .frontImage,
+.imageContainer:hover .frontImage {
     opacity: 0;
 }
 
-.shoeDiv:hover .sideImage, .imageContainer:hover .sideImage{
+.shoeDiv:hover .sideImage,
+.imageContainer:hover .sideImage {
     opacity: 1;
 }
 
-.ribbon{
+.ribbon {
     display: inline-block;
     padding: 5px 15px;
-	position: absolute;
+    position: absolute;
     right: 0px;
     top: 0px;
     line-height: 24px;
-	height:35px;
+    height: 35px;
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
     border-radius: .25em;
-	border-radius: 0;
+    border-radius: 0;
     text-shadow: none;
     font-weight: bold;
     background-color: var(--second-accent);
     color: var(--bg-color);
 }
 
-/*Por último, lilDisplay también tiene hijos. Como ambos son textos, modifique
-el CSS solo para que se alinee al centro, esto va a cambiar si es que queremos
-mostrar los colores de los productos y el stock disponible. */
+.ribbonTR {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    position: absolute;
+    top: -3px;
+    right: -3px;
+}
 
-.lilDisplay{
+.ribbonTR span {
+    position: absolute;
+    display: block;
+    width: 165px;
+    padding: 5px 0;
+    background-color: var(--secondary-color);
+    color: var(--bg-color);
+    text-align: center;
+    white-space: nowrap;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+}
+
+.ribbonTR::before,
+.ribbonTR::after {
+    border-top-color: transparent;
+    border-right-color: transparent;
+}
+
+.ribbonTR::before {
+    top: 0;
+    left: 0;
+}
+
+.ribbonTR::after {
+    bottom: 0;
+    right: 0;
+}
+
+.ribbonTR span {
+    left: -22px;
+    top: 30px;
+    transform: rotate(45deg);
+}
+
+.lilDisplay {
     text-align: center;
     padding: 5px;
-} 
+}
 
-.priceCont{
+.priceCont {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5px;
 }
 
-.priceDisc{
-    text-decoration:line-through;
+.priceDisc {
+    text-decoration: line-through;
     color: var(--primary-color);
 }
 
-.newPrice{
+.newPrice {
     font-weight: bold;
 }
 
@@ -412,19 +470,19 @@ mostrar los colores de los productos y el stock disponible. */
     border: none;
 }
 
-.closeContainer{
+.closeContainer {
     display: flex;
     justify-content: flex-end;
 }
 
-.displayContainer{
+.displayContainer {
     display: flex;
     width: 100%;
     height: 90%;
     padding: 10px 30px;
 }
 
-.rightContainer{
+.rightContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -433,12 +491,12 @@ mostrar los colores de los productos y el stock disponible. */
     gap: 10px;
 }
 
-.rightContainer h1{
+.rightContainer h1 {
     text-align: center;
 }
 
 /* Botones del Dialog */
-.dialog button{
+.dialog button {
     display: flex;
     align-items: center;
     padding: 8px 15px;
@@ -453,27 +511,28 @@ mostrar los colores de los productos y el stock disponible. */
     background-color: var(--second-accent);
 }
 
-.dialog button:active{
+.dialog button:active {
     background-color: var(--second-accent);
     color: var(--secondary-color);
 }
 
-.dialog .closeBtn{
+.dialog .closeBtn {
     border-radius: 0 0 0 8px;
 }
 
-.dialog .plusBtn, .dialog .minusBtn{
+.dialog .plusBtn,
+.dialog .minusBtn {
     padding: 5px;
     border-radius: 4px;
     background-color: var(--primary-color);
 }
 
-.dialog .cartBtn{
+.dialog .cartBtn {
     font-size: 12px;
     padding: 2px 5px;
 }
 
-.shoppingCart{
+.shoppingCart {
     display: flex;
     justify-content: center;
     width: 20vw;
@@ -481,11 +540,12 @@ mostrar los colores de los productos y el stock disponible. */
     gap: 1px;
 }
 
-.quantity{
+.quantity {
     display: flex;
     width: 7vw;
 }
-.counter{
+
+.counter {
     -webkit-appearance: none;
     appearance: none;
     border: none;
@@ -496,25 +556,28 @@ mostrar los colores de los productos y el stock disponible. */
     font-weight: 300;
     background-color: var(--bg-color);
 }
+
 /* Chrome, Safari, Edge, Opera */
 .counter::-webkit-outer-spin-button,
 .counter::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /* Firefox */
 .counter[type=number] {
-  -moz-appearance: textfield;
-  appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
 }
 
 /* FOOTER */
 
 .row {
     padding: 2rem;
-    display: flex; /* Esto activa Flexbox para el contenedor */
-    flex-wrap: wrap; /* Permite que los elementos se pasen a la siguiente línea si no hay espacio */
+    display: flex;
+    /* Esto activa Flexbox para el contenedor */
+    flex-wrap: wrap;
+    /* Permite que los elementos se pasen a la siguiente línea si no hay espacio */
     gap: 20px;
     justify-content: center;
     align-items: flex-start;
@@ -528,8 +591,12 @@ mostrar los colores de los productos y el stock disponible. */
     background-color: var(--secondary-color);
 }
 
-.col-redes, .col-navegacion, .col-medios, .col-newsletter {
-    flex: 1; /* Cada columna toma un igual porcentaje del espacio disponible */
+.col-redes,
+.col-navegacion,
+.col-medios,
+.col-newsletter {
+    flex: 1;
+    /* Cada columna toma un igual porcentaje del espacio disponible */
     color: var(--bg-color);
     margin-right: 20px;
     max-width: 200px;
@@ -537,26 +604,32 @@ mostrar los colores de los productos y el stock disponible. */
 
 /* Estilos para la columna de envíos */
 .col-medios .envios {
-    margin-top: 20px; /* Añade un espacio entre las dos secciones dentro de la columna de medios */
+    margin-top: 20px;
+    /* Añade un espacio entre las dos secciones dentro de la columna de medios */
 }
 
 /* Estilos adicionales para mejor visualización */
-.col-redes a, .col-navegacion ul {
-    margin: 10px 0; /* Añade un poco de margen superior e inferior para separar los elementos */
+.col-redes a,
+.col-navegacion ul {
+    margin: 10px 0;
+    /* Añade un poco de margen superior e inferior para separar los elementos */
 }
 
 .col-redes h4 {
     margin-left: 5px;
 }
 
-.col-medios h4, .col-newsletter h4 {
+.col-medios h4,
+.col-newsletter h4 {
     margin-bottom: 1.5rem;
 }
 
 .col-redes a {
-    padding-top: 1rem; /* Añade un padding superior de 1rem */
+    padding-top: 1rem;
+    /* Añade un padding superior de 1rem */
     margin: 0 5px 0 5px;
-    display: inline-block; /* Esto asegura que el padding se aplique correctamente */
+    display: inline-block;
+    /* Esto asegura que el padding se aplique correctamente */
     color: var(--second-accent);
 }
 
@@ -568,7 +641,8 @@ mostrar los colores de los productos y el stock disponible. */
     color: var(--bg-color);
 }
 
-.copyright, .copyright a {
+.copyright,
+.copyright a {
     color: var(--accent-color);
     font-size: 12px;
 }
@@ -595,30 +669,40 @@ mostrar los colores de los productos y el stock disponible. */
     font-weight: bolder;
     padding: 12px 20px;
     border: none;
-    cursor: pointer; /* Cambia el cursor al pasar por encima del botón */
+    cursor: pointer;
+    /* Cambia el cursor al pasar por encima del botón */
     margin-top: 5px;
-    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
-    transition-delay: 0.1s; /* Retraso de 0.2 segundos */
+    transition: background-color 0.3s ease;
+    /* Transición suave para el color de fondo */
+    transition-delay: 0.1s;
+    /* Retraso de 0.2 segundos */
 }
 
 .submit-button:hover {
-    background-color: #313131; /* Cambia el color de fondo al pasar el cursor por encima */
+    background-color: #313131;
+    /* Cambia el color de fondo al pasar el cursor por encima */
 }
 
 /* Estilos para el contenedor de las imágenes */
 .image-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(32px, 1fr)); /* Columnas dinámicas */
-    max-width: 200px; /* Ancho máximo del contenedor */
-    margin: 0 auto; /* Centra el contenedor en la página */
+    grid-template-columns: repeat(auto-fill, minmax(32px, 1fr));
+    /* Columnas dinámicas */
+    max-width: 200px;
+    /* Ancho máximo del contenedor */
+    margin: 0 auto;
+    /* Centra el contenedor en la página */
     gap: 2px;
 }
 
 /* Estilos para las imágenes */
 .image-container img {
-    width: auto; /* Ancho automático */
-    max-height: 20px; /* Altura máxima de 32px */
-    margin: 2px; /* Margen de 2px alrededor de cada imagen */
+    width: auto;
+    /* Ancho automático */
+    max-height: 20px;
+    /* Altura máxima de 32px */
+    margin: 2px;
+    /* Margen de 2px alrededor de cada imagen */
 }
 
 /* Contacto */
@@ -631,7 +715,8 @@ mostrar los colores de los productos y el stock disponible. */
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
-    margin-bottom: 50px; /*Le agregué un margen por debajo para que no quede pegado el botón al footer*/
+    margin-bottom: 50px;
+    /*Le agregué un margen por debajo para que no quede pegado el botón al footer*/
 }
 
 .container-form h2 {
@@ -646,7 +731,7 @@ mostrar los colores de los productos y el stock disponible. */
     margin-bottom: 20px;
     text-align: center;
 }
- 
+
 
 .container-form form .campo,
 .container-form form textarea {
@@ -664,6 +749,13 @@ mostrar los colores de los productos y el stock disponible. */
     min-width: 100%;
     min-height: 140px;
     max-height: 150px;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+textarea {
+    box-sizing: border-box;
 }
 
 .container-form .btn-enviar {
@@ -688,43 +780,54 @@ mostrar los colores de los productos y el stock disponible. */
     text-decoration: none;
     color: var(--dark-color);
     font-weight: 900;
-    display: inline-block; /* Cambia a inline-block para que los enlaces estén en la misma línea */
-    margin-right: 500px; /* Agrega un espacio a la derecha del primer enlace */
+    display: inline-block;
+    /* Cambia a inline-block para que los enlaces estén en la misma línea */
+    margin-right: 500px;
+    /* Agrega un espacio a la derecha del primer enlace */
 }
 
 .info-form a:last-child {
-    margin-right: 0; /* Elimina el margen derecho del último enlace para evitar espacio adicional */
+    margin-right: 0;
+    /* Elimina el margen derecho del último enlace para evitar espacio adicional */
+}
+
+.error {
+    font-size: 15px;
+    color: red;
+    margin-top: 0px;
 }
 
 /* BOTÓN WHATSAPP */
 
-.btn-wsp{
-    position:fixed;
-    width:60px;
-    height:60px;
+.btn-wsp {
+    position: fixed;
+    width: 60px;
+    height: 60px;
     line-height: 60px;
-    bottom:25px;
-    right:25px;
-    background:#25d366;
-    color:#FFF;
-    border-radius:50px;
-    text-align:center;
-    font-size:35px;
-    box-shadow: 0px 1px 10px rgba(0,0,0,0.3);
-    z-index:100;
+    bottom: 25px;
+    right: 25px;
+    background: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 35px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+    z-index: 100;
     transition: all 300ms ease;
 }
-.btn-wsp:hover{
+
+.btn-wsp:hover {
     text-decoration: none;
     color: #0df053;
     background: #fff;
 }
-@media only screen and (min-width:320px) and (max-width:768px){
-    .btn-wsp{
-        width:63px;
-        height:63px;
+
+@media only screen and (min-width:320px) and (max-width:768px) {
+    .btn-wsp {
+        width: 63px;
+        height: 63px;
         line-height: 66px;
-	}
+    }
 }
 
 /*CREADORES*/
@@ -740,8 +843,10 @@ body {
     color: white;
     text-align: center;
     padding: 20px 0;
-    font-size: 1.25em; /* Tamaño de letra para el encabezado */
+    font-size: 1.25em;
+    /* Tamaño de letra para el encabezado */
 }
+
 .creators-section {
     flex: 1;
     display: flex;
@@ -784,5 +889,10 @@ body {
     text-align: center;
     padding: 10px 0;
     margin-top: auto;
-    font-size: 0.85em; /* Tamaño de letra para el pie de página */
+    font-size: 0.85em;
+    /* Tamaño de letra para el pie de página */
+}
+
+.creadores-footer a {
+    color: var(--accent-color);
 }

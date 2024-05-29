@@ -35,6 +35,7 @@ h4 {
     font-size: 1.3rem;
 }
 
+
 /* HEADER */
 
 .descuento {
@@ -819,9 +820,12 @@ de cada producto y si estan disponibles o fuera de stock)*/
     text-decoration: none;
     color: var(--dark-color);
     font-weight: 900;
-    display: inline-block;
-    margin-right: 500px;
+    display: inline-block; /* Cambia a inline-block para que los enlaces estén en la misma línea */
+    margin-right: 500px; /* Agrega un espacio a la derecha del primer enlace */
+    flex-direction: row;
+    gap: 10px;
 }
+
 
 .info-form a:last-child {
     margin-right: 0;
@@ -961,4 +965,55 @@ body {
 
 .copyright>a{
     color: var(--second-accent);
-}
+  }
+  
+/* MEDIA QUERYS */
+
+@media (max-width: 840px) {
+    main, .row-header, .footer-content .row, .navbar, .info-form a, .displayHombre, .displayMujer, .displayNiños, .displayAd, .main-body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    div.filter {
+        box-shadow: none;
+        padding: 0;
+    }
+
+    div.col-2, .info-form a, ul.nav-list{
+        padding: 0.5rem 0.5rem;
+        margin: 0;
+    }    
+
+    .shoppingCart {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .quantity {
+        justify-content: center;
+    }
+
+    dialog.dialog {
+        height: 50%;
+    }
+    .displayContainer {
+        padding: 1rem;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .image-container {
+        object-fit: cover;
+        flex: 1 1 auto;
+    }
+    .rightContainer {
+        align-self: center;
+        width: 100%;
+    }

@@ -1,60 +1,96 @@
-const button = document.querySelector('.btn-enviar');
-const myForm = document.getElementById('myForm');
-const message = document.getElementById("mensaje");
-//
-myForm.addEventListener("submit", (event) => {
-  // Detener el envío del formulario
-  event.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
+  const button = document.querySelector('.btn-enviar');
+  const myForm = document.getElementById('myForm');
+  const message = document.getElementById("mensaje");
 
-  // Limpiar mensajes de error anteriores
-  clearErrors();
+  myForm.addEventListener("submit", (event) => {
+    // Detener el envío del formulario
+    event.preventDefault();
 
-  // Obtener los valores de los campos
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const phone = document.getElementById("cell-phone").value;
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // Limpiar mensajes de error anteriores
+    clearErrors();
 
-  // Validar los campos
-  if (!name) {
-    showError("name", "Ingrese su nombre.");
-  }
-  if (!email || !emailRegex.test(email)) {
-    showError("email", "Ingrese su email.");
-  }
-  if (!phone || !/^[0-9]*$/.test(phone)) {
-    showError("cell-phone", "Ingrese su teléfono.");
-  }
-  if (!message.value) {
-    showError("mensaje", "Ingrese su mensaje.");
-  }
-  if (message.value.length > 150) {
-    showError("mensaje", "Ingrese menos de 150 caracteres.")
-  }
-  message.addEventListener("input", contador(message));
-  // Si todos los campos son válidos, puedes enviar el formulario o hacer otras acciones
-});
+    // Obtener los valores de los campos
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("cell-phone").value;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-function contador(msj) {
-  const charCount = document.getElementById('count');
-  const maxLength = 150;
-  const length = msj.value.length;
-  const remaining = maxLength - length;
-  charCount.textContent = remaining;
-  if (length > maxLength) {
-    charCount.classList.add('error');
-  } else {charCount.classList.remove('error');}
-}
+    // Validar los campos
+    let valid = true;
+    if (!name) {
+      showError("name", "Ingrese su nombre.");
+      valid = false;
+    }
+    if (!email || !emailRegex.test(email)) {
+      showError("email", "Ingrese un email válido.");
+      valid = false;
+    }
+    if (!phone || !/^[0-9]*$/.test(phone)) {
+      showError("cell-phone", "Ingrese su teléfono.");
+      valid = false;
+    }
+    if (!message.value) {
+      showError("mensaje", "Ingrese su mensaje.");
+      valid = false;
+    }
+    if (message.value.length > 150) {
+      showError("mensaje", "Ingrese menos de 150 caracteres.");
+      valid = false;
+    }
 
-function showError(fieldId, errorMessage) {
-  const errorSpan = document.getElementById(fieldId + "Error");
-  errorSpan.textContent = errorMessage;
-}
+    if (valid) {
+      // Mostrar mensaje de éxito
+      showSuccessMessage();
 
-function clearErrors() {
-  const errorSpans = document.querySelectorAll(".error");
-  errorSpans.forEach(function (span) {
-    span.textContent = "";
+      // Limpiar campos del formulario
+      clearFormFields();
+    }
   });
-}
 
+  function contador(msj) {
+    const charCount = document.getElementById('count');
+    const maxLength = 150;
+    const length = msj.value.length;
+    const remaining = maxLength - length;
+    charCount.textContent = remaining;
+    if (length > maxLength) {
+      charCount.classList.add('error');
+    } else {
+      charCount.classList.remove('error');
+    }
+  }
+
+  message.addEventListener("input", () => contador(message));
+
+  function showError(fieldId, errorMessage) {
+    const errorSpan = document.getElementById(fieldId + "Error");
+    errorSpan.textContent = errorMessage;
+  }
+
+  function clearErrors() {
+    const errorSpans = document.querySelectorAll(".error");
+    errorSpans.forEach((span) => {
+      span.textContent = "";
+    });
+  }
+
+  function clearFormFields() {
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("cell-phone").value = "";
+    document.getElementById("mensaje").value = "";
+    document.getElementById('count').textContent = "150"; // Reset the character counter
+  }
+
+  function showSuccessMessage() {
+    const successMessage = document.createElement("div");
+    successMessage.classList.add("mensajeExitoso");
+    successMessage.textContent = "Mensaje Enviado";
+    button.parentNode.appendChild(successMessage);
+
+    setTimeout(() => {
+      successMessage.remove();
+    }, 3000);
+  }
+});

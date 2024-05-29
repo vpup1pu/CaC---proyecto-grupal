@@ -337,7 +337,7 @@ de cada producto y si estan disponibles o fuera de stock)*/
 }
 
 .imageContainer {
-    flex: 1;
+    flex: 1 1 auto;
     position: relative;
     min-height: 0;
 }
@@ -969,7 +969,7 @@ body {
   
 /* MEDIA QUERYS */
 
-@media (max-width: 840px) {
+@media (min-width: 760px) and (max-width: 992px){
     main, .row-header, .footer-content .row, .navbar, .info-form a, .displayHombre, .displayMujer, .displayNiños, .displayAd, .main-body{
         display: flex;
         flex-direction: column;
@@ -977,10 +977,17 @@ body {
         align-items: center;
         width: 100%;
     }
-
+        
+    aside.categories, aside{
+        margin: 0;
+        padding: 0;
+    }
+    
     div.filter {
         box-shadow: none;
         padding: 0;
+        width: 100%;
+        padding-left: 43%;
     }
 
     div.col-2, .info-form a, ul.nav-list{
@@ -1000,7 +1007,9 @@ body {
     }
 
     dialog.dialog {
-        height: 50%;
+        left: 5%;
+        height: 70%;
+        width: 90vw;
     }
     .displayContainer {
         padding: 1rem;
@@ -1008,12 +1017,102 @@ body {
         justify-content: center;
         align-content: center;
     }
-
-    .image-container {
-        object-fit: cover;
-        flex: 1 1 auto;
+    .imageContainer{
+        height: 50vh;
+    }
+    .sideImage, .frontImage{
+        object-fit:scale-down;
     }
     .rightContainer {
         align-self: center;
         width: 100%;
+        height: 50%;
     }
+
+    .optionContainer{
+        gap: 1px;
+        margin-top: 10px;
+    }
+
+    .optionContainer div .optionLabel .optionName{
+        padding: .2rem;
+    }
+
+    .main-ad {
+        width: 100%;
+    }
+}
+
+@media (max-width: 760px) {
+    main, .row-header, .footer-content .row, .navbar, .info-form a, .displayHombre, .displayMujer, .displayNiños, .displayAd, .main-body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    aside.categories, aside{
+        margin: 0;
+        padding: 0;
+    }
+
+    div.filter {
+        box-shadow: none;
+        padding: 0;
+        width: 100%;
+        padding-left: 35%;
+    }
+
+    div.col-2, .info-form a, ul.nav-list{
+        padding: 0.5rem 0.5rem;
+        margin: 0;
+    }    
+
+    .shoppingCart {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .quantity {
+        justify-content: center;
+    }
+
+    dialog.dialog {
+        left: 5%;
+        height: 70%;
+        width: 90vw;
+    }
+    .displayContainer {
+        padding: 1rem;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+    .imageContainer{
+        height: 50vh;
+    }
+    .sideImage, .frontImage{
+        object-fit:scale-down;
+    }
+    .rightContainer {
+        align-self: center;
+        width: 100%;
+        height: 50%;
+    }
+
+    .optionContainer{
+        gap: 1px;
+        margin-top: 10px;
+    }
+
+    .optionContainer div .optionLabel .optionName{
+        padding: .2rem;
+    }
+
+    .main-ad {
+        width: 100%;
+    }
+}

@@ -273,11 +273,10 @@ function checkAvailability(array, imgCont) {
                     ribbonDiv.style.display = 'none';
                 }
                 found = true;
-                break; // Exit loop once the matching variation is found
+                break;
             }
         }
         if (!found) {
-            // If no matching variation is found, hide the ribbon
             ribbonDiv.style.display = 'none';
         }
     }

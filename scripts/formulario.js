@@ -4,19 +4,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const message = document.getElementById("mensaje");
 
   myForm.addEventListener("submit", (event) => {
-    // Detener el envío del formulario
     event.preventDefault();
 
-    // Limpiar mensajes de error anteriores
     clearErrors();
 
-    // Obtener los valores de los campos
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const phone = document.getElementById("cell-phone").value;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    // Validar los campos
     let valid = true;
     if (!name) {
       showError("name", "Ingrese su nombre.");
@@ -40,10 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (valid) {
-      // Mostrar mensaje de éxito
       showSuccessMessage();
-
-      // Limpiar campos del formulario
       clearFormFields();
     }
   });
@@ -80,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("email").value = "";
     document.getElementById("cell-phone").value = "";
     document.getElementById("mensaje").value = "";
-    document.getElementById('count').textContent = "150"; // Reset the character counter
+    document.getElementById('count').textContent = "150";
   }
 
   function showSuccessMessage() {

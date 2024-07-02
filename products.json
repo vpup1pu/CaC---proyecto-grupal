@@ -1,0 +1,61 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Producto 1",
+      "categoria": "URBANOS",
+      "precio": 120,
+      "stock": 5,
+      "detalles": {
+        "talles": ["S", "M", "L", "XL"],
+        "colores": ["Negro", "Blanco", "Gris", "Azul"]
+      }
+    },
+    {
+      "id": 2,
+      "nombre": "Producto 2",
+      "descripcion": "Descripción del Producto 2",
+      "categoria": "ZAPATOS",
+      "precio": 120,
+      "stock": 5,
+      "detalles": {
+        "talles": ["35", "36", "37", "38", "39", "40"],
+        "colores": ["Negro", "Blanco", "Rojo", "Azul"]
+      }
+    },
+    {
+      "id": 3,
+      "nombre": "Producto 3",
+      "categoria": "DEPORTIVOS",
+      "precio": 120,
+      "stock": 5,
+      "detalles": {
+        "talles": ["37", "38", "39", "40", "41", "42"],
+        "colores": ["Negro", "Gris", "Rojo", "Verde"]
+      }
+    },
+    {
+      "id": 4,
+      "nombre": "Producto 4",
+      "categoria": "INDUMENTARIA",
+      "precio": 120,
+      "stock": 5,
+      "detalles": {
+        "talles": ["XS", "S", "M", "L", "XL"],
+        "colores": ["Negro", "Blanco", "Gris", "Azul"]
+      }
+    },
+    {
+      "id": 5,
+      "nombre": "Producto 5",
+      "categoria": "DESCUENTOS",
+      "precio": 120,
+      "stock": 5,
+      "detalles": {
+        "talles": ["S", "M", "L"],
+        "colores": ["Negro", "Blanco", "Rojo", "Azul"]
+      }
+    }
+  ]
+}
+

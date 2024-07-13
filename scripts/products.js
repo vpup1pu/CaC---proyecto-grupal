@@ -18,7 +18,8 @@ class Product {
     }
 }
 
-export let stuffNiño = [
+
+let stuffNiño = [
     new Product(`./static/img/01front.jpg`, `./static/img/01side.jpg`, 'Zapatillas Topper', 'Urbanos', 80000, [
         { size: 8, color: 'negro', availability: 'disponible' },
         { size: 8, color: 'azul', availability: 'disponible' },
@@ -53,7 +54,7 @@ export let stuffNiño = [
     ], 25)
 ];
 
-export let stuffMujer = [
+let stuffMujer = [
     new Product(`./static/img/06front.avif`, `./static/img/06side.avif`, 'Zapatillas Gazelle', 'Urbanos', 183999, [
         { size: 37, color: 'gris', availability: 'disponible' },
         { size: 37, color: 'verde', availability: 'fuera de stock' },
@@ -99,7 +100,7 @@ export let stuffMujer = [
     ], 10)
 ];
 
-export let stuffHombre = [
+let stuffHombre = [
     new Product(`./static/img/11front.webp`, `./static/img/11side.webp`, 'Zapatilla Ringo Bay', 'Urbanos', 109000, [
         { size: 40, color: 'negro', availability: 'disponible' },
         { size: 41, color: 'negro', availability: 'disponible' },
@@ -135,4 +136,10 @@ export let stuffHombre = [
     ], 50)
 ];
 
-export const stock = [stuffNiño, stuffMujer, stuffHombre];
+
+module.exports = {
+    Product,
+    stuffHombre,
+    stuffMujer,
+    stuffNiño,
+}

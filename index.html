@@ -23,7 +23,21 @@
                     <a href="#"><img src="./static/img/logo.jpeg" id="logo_calzados" alt="logo_calzados"></a>
                 </div>
                 <div class="col-2 menu-user"><!--Estético, no funcional-->
-                    <a href="#"><i class="fas fa-plus-circle"></i> CREAR CUENTA</a>
+                    <a href="#" id="openModalBtn"><i class="fas fa-plus-circle"></i> CREAR CUENTA</a>
+                    <div id="myModal" class="modal" style="display: none;">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h2>REGISTRO DE USUARIO</h2>
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username"><br>
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password"><br>
+                            <label for="email">e-mail</label>
+                            <input type="email" id="email" name="email"><br>
+                            <button id="registerBtn">REGISTRARSE</button>
+                        </div>
+                        <div id="successMessage" class="hidden">User registered successfully.</div>
+                    </div>
                     <a href="#"><i class="far fa-user-circle"></i> INICIAR SESIÓN</a>
                     <a href="#"><i class="fas fa-shopping-cart"></i></a>
                 </div>
@@ -63,8 +77,9 @@
                     <li><a href="./tab-contacto.html">CONTACTO</a></li>
                 </ul>
                 <div class="search-box"><!--Estético, no funcional-->
-                    <input type="text" name="buscador" placeholder="Buscar...">
-                    <button type="submit">Buscar</button>
+                    <input type="text" name="buscador" id="searchInput" placeholder="Buscar...">
+                    <button type="submit" id="searchButton">Buscar</button>
+                    <div id="searchResults"></div>
                 </div>
             </nav>
         </div>

@@ -289,3 +289,100 @@ function selectedChoice(prop) {
     }
     return null;
 }
+
+// MODAL DE CREAR USUARIO
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('myModal');
+    const openModalBtn = document.getElementById('openModalBtn');
+    const closeModalBtn = document.getElementsByClassName('close')[0];
+
+    modal.style.display = 'none';
+
+    openModalBtn.onclick = function() {
+        modal.style.display = 'block';
+    }
+
+    closeModalBtn.onclick = function() {
+        modal.style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+});
+
+/** FUNCION DEL BOTON DE REGISTRO DE USUARIO */
+
+const registerBtn = document.getElementById('registerBtn');
+
+registerBtn.addEventListener('click', async () => {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const email = document.getElementById('email').value;
+
+    try {
+        const response = await fetch('http://localhost:3001/register/user', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username, password, email }),
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            alert(data.message); // Mostrar mensaje de éxito
+        } else {
+            const errorData = await response.json();
+            alert(errorData.message); // Mostrar mensaje de error
+        }
+    } catch (error) {
+        console.error('Error al registrar usuario:', error.message);
+        alert('Error interno al registrar usuario. Por favor, inténtelo de nuevo más tarde.');
+    }
+});
+
+// FUNCION INPUT DE BUSQUEDA 
+
+
+const containerAd = document.querySelector('.displayAd');
+
+const searchProducts = async (searchTerm) => {
+    try {
+        // Realiza la solicitud GET al servidor para buscar productos por nombre
+        const response = await fetch(`http://localhost:3001/products/search?name=${searchTerm}`);
+
+        if (!response.ok) {
+            throw new Error('Error searching products.');
+        }
+
+        const products = await response.json();
+
+        // Filtrar productos con descuento
+        const filteredProducts = products.filter(product => !product.has_discount);
+
+        // Limpia el contenido actual del displayAd
+        containerAd.innerHTML = '';
+
+        // Muestra los productos encontrados en el displayAd
+        displayContainer(filteredProducts, containerAd);
+    } catch (error) {
+        console.error('Error searching products:', error);
+        // Manejo de errores, por ejemplo mostrar un mensaje de error al usuario
+        alert('Error buscando productos. Por favor, inténtelo de nuevo más tarde.');
+    }
+};
+
+// Ejemplo de uso, puedes llamar esta función al hacer clic en un botón de búsqueda
+const searchButton = document.getElementById('searchButton');
+searchButton.addEventListener('click', () => {
+    const searchTerm = document.getElementById('searchInput').value.trim();
+    if (searchTerm !== '') {
+        searchProducts(searchTerm);
+    } else {
+        alert('Por favor, ingrese un término de búsqueda válido.');
+    }
+});
+
